@@ -657,88 +657,125 @@
                     </div>
 
                     <div class="grid lg:grid-cols-2 gap-x-6 gap-y-4">
-                        <div class="bg-white shadow-md rounded-md px-6 py-3" x-data="{open : false}">
-                            <div class="flex items-center justify-between space-x-4 cursor-pointer"
-                                @click="open = !open">
-                                <h5 class="text-lg text-neutral-800 font-semibold">How does Monetars work? </h5>
-                                <svg class="w-5 text-neutral-800 shrink-0 transition-all"
-                                    :class="open ? 'rotate-180' : ''" viewBox="0 0 24 24">
-                                    <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <path d="M6 9l6 6l6-6"></path>
-                                    </g>
-                                </svg>
+                        <div class="space-y-4">
+                            <div class="bg-white shadow-md rounded-md px-6 py-3" x-data="{open : false}">
+                                <div class="flex items-center space-x-4 cursor-pointer" @click="open = !open">
+                                    <span
+                                        class="md:flex hidden justify-center items-center w-8 h-8 rounded bg-blue-800 text-white"><svg
+                                            class="w-4" :class="open ? 'rotate-180' : ''" viewBox="0 0 384 512">
+                                            <path fill="currentColor"
+                                                d="M378.8 309.8l-176 165.9C199.7 478.6 195.9 480 192 480s-7.719-1.426-10.77-4.31l-176-165.9C-1.297 303.6-1.781 293.1 4.156 286.3c5.953-6.838 16.09-7.259 22.61-1.134L176 425.9V48.59c0-9.171 7.156-16.59 15.1-16.59S208 39.42 208 48.59v377.3l149.2-140.7c6.516-6.125 16.66-5.704 22.61 1.134C385.8 293.1 385.3 303.6 378.8 309.8z">
+                                            </path>
+                                        </svg></span>
+                                    <h5 class="text-lg text-neutral-800">How does Monetars work? </h5>
+                                </div>
+                                <div class="pt-3" x-show="open">
+                                    <p class="text-base text-gray-500">Monetars works with various game publishers,
+                                        survey
+                                        providers and websites.
+                                        Manufacturers and providers pay Monetars for Monetars members to test the
+                                        websites/games.</p>
+                                </div>
                             </div>
-                            <div class="pt-3" x-show="open">
-                                <p class="text-base text-gray-500">Monetars works with various game publishers,
-                                    survey
-                                    providers and websites.
-                                    Manufacturers and providers pay Monetars for Monetars members to test the
-                                    websites/games.</p>
+
+                            <div class="bg-white shadow-md rounded-md px-6 py-3" x-data="{open : false}">
+                                <div class="flex items-center space-x-4 cursor-pointer" @click="open = !open">
+                                    <span
+                                        class="md:flex hidden justify-center items-center w-8 h-8 rounded bg-blue-800 text-white"><svg
+                                            class="w-4" :class="open ? 'rotate-180' : ''" viewBox="0 0 384 512">
+                                            <path fill="currentColor"
+                                                d="M378.8 309.8l-176 165.9C199.7 478.6 195.9 480 192 480s-7.719-1.426-10.77-4.31l-176-165.9C-1.297 303.6-1.781 293.1 4.156 286.3c5.953-6.838 16.09-7.259 22.61-1.134L176 425.9V48.59c0-9.171 7.156-16.59 15.1-16.59S208 39.42 208 48.59v377.3l149.2-140.7c6.516-6.125 16.66-5.704 22.61 1.134C385.8 293.1 385.3 303.6 378.8 309.8z">
+                                            </path>
+                                        </svg></span>
+                                    <h5 class="text-lg text-neutral-800">How much money can I earn on
+                                        Monetars?</h5>
+                                </div>
+                                <div class="pt-3" x-show="open">
+                                    <p class="text-base text-gray-500">There is no limit to how much you can earn. We
+                                        have
+                                        a variety of ways to earn money with us. Some of our members earn hundreds of
+                                        dollars a month.</p>
+                                </div>
+                            </div>
+
+                            <div class="bg-white shadow-md rounded-md px-6 py-3" x-data="{open : false}">
+                                <div class="flex items-center space-x-4 cursor-pointer" @click="open = !open">
+                                    <span
+                                        class="md:flex hidden justify-center items-center w-8 h-8 rounded bg-blue-800 text-white"><svg
+                                            class="w-4" :class="open ? 'rotate-180' : ''" viewBox="0 0 384 512">
+                                            <path fill="currentColor"
+                                                d="M378.8 309.8l-176 165.9C199.7 478.6 195.9 480 192 480s-7.719-1.426-10.77-4.31l-176-165.9C-1.297 303.6-1.781 293.1 4.156 286.3c5.953-6.838 16.09-7.259 22.61-1.134L176 425.9V48.59c0-9.171 7.156-16.59 15.1-16.59S208 39.42 208 48.59v377.3l149.2-140.7c6.516-6.125 16.66-5.704 22.61 1.134C385.8 293.1 385.3 303.6 378.8 309.8z">
+                                            </path>
+                                        </svg></span>
+                                    <h5 class="text-lg text-neutral-800">How long does a task take?</h5>
+                                </div>
+                                <div class="pt-3" x-show="open">
+                                    <p class="text-base text-gray-500">The duration of assignments can vary depending on
+                                        the scope and payment. As a rule, the longer a job takes, the higher the
+                                        payment.</p>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="bg-white shadow-md rounded-md px-6 py-3" x-data="{open : false}">
-                            <div class="flex items-center justify-between space-x-4 cursor-pointer"
-                                @click="open = !open">
-                                <h5 class="text-lg text-neutral-800 font-semibold">How much money can I earn on
-                                    Monetars?</h5>
-                                <svg class="w-5 text-neutral-800 shrink-0 transition-all"
-                                    :class="open ? 'rotate-180' : ''" viewBox="0 0 24 24">
-                                    <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <path d="M6 9l6 6l6-6"></path>
-                                    </g>
-                                </svg>
+                        <div class="space-y-4">
+                            <div class="bg-white shadow-md rounded-md px-6 py-3" x-data="{open : false}">
+                                <div class="flex items-center space-x-4 cursor-pointer" @click="open = !open">
+                                    <span
+                                        class="md:flex hidden justify-center items-center w-8 h-8 rounded bg-blue-800 text-white"><svg
+                                            class="w-4" :class="open ? 'rotate-180' : ''" viewBox="0 0 384 512">
+                                            <path fill="currentColor"
+                                                d="M378.8 309.8l-176 165.9C199.7 478.6 195.9 480 192 480s-7.719-1.426-10.77-4.31l-176-165.9C-1.297 303.6-1.781 293.1 4.156 286.3c5.953-6.838 16.09-7.259 22.61-1.134L176 425.9V48.59c0-9.171 7.156-16.59 15.1-16.59S208 39.42 208 48.59v377.3l149.2-140.7c6.516-6.125 16.66-5.704 22.61 1.134C385.8 293.1 385.3 303.6 378.8 309.8z">
+                                            </path>
+                                        </svg></span>
+                                    <h5 class="text-lg text-neutral-800">When can I make my first
+                                        withdrawal?</h5>
+                                </div>
+                                <div class="pt-3" x-show="open">
+                                    <p class="text-base text-gray-500">The smallest withdrawal is 5000 coins. This
+                                        corresponds to a value of 5,00$.
+                                        You can withdraw your coins as Paypal/ Visa credits or in various vouchers.</p>
+                                </div>
                             </div>
-                            <div class="pt-3" x-show="open">
-                                <p class="text-base text-gray-500">There is no limit to how much you can earn. We
-                                    have
-                                    a variety of ways to earn money with us. Some of our members earn hundreds of
-                                    dollars a month.</p>
+                            <div class="bg-white shadow-md rounded-md px-6 py-3" x-data="{open : false}">
+                                <div class="flex items-center space-x-4 cursor-pointer" @click="open = !open">
+                                    <span
+                                        class="md:flex hidden justify-center items-center w-8 h-8 rounded bg-blue-800 text-white"><svg
+                                            class="w-4" :class="open ? 'rotate-180' : ''" viewBox="0 0 384 512">
+                                            <path fill="currentColor"
+                                                d="M378.8 309.8l-176 165.9C199.7 478.6 195.9 480 192 480s-7.719-1.426-10.77-4.31l-176-165.9C-1.297 303.6-1.781 293.1 4.156 286.3c5.953-6.838 16.09-7.259 22.61-1.134L176 425.9V48.59c0-9.171 7.156-16.59 15.1-16.59S208 39.42 208 48.59v377.3l149.2-140.7c6.516-6.125 16.66-5.704 22.61 1.134C385.8 293.1 385.3 303.6 378.8 309.8z">
+                                            </path>
+                                        </svg></span>
+                                    <h5 class="text-lg text-neutral-800">When will I receive my payout?
+                                    </h5>
+                                </div>
+                                <div class="pt-3" x-show="open">
+                                    <p class="text-base text-gray-500">Payouts are usually processed within a few
+                                        minutes
+                                        to a few hours.
+                                        This means that you will receive your money on the same day.</p>
+                                </div>
+                            </div>
+
+                            <div class="bg-white shadow-md rounded-md px-6 py-3" x-data="{open : false}">
+                                <div class="flex items-center space-x-4 cursor-pointer" @click="open = !open">
+                                    <span
+                                        class="md:flex hidden justify-center items-center w-8 h-8 rounded bg-blue-800 text-white"><svg
+                                            class="w-4" :class="open ? 'rotate-180' : ''" viewBox="0 0 384 512">
+                                            <path fill="currentColor"
+                                                d="M378.8 309.8l-176 165.9C199.7 478.6 195.9 480 192 480s-7.719-1.426-10.77-4.31l-176-165.9C-1.297 303.6-1.781 293.1 4.156 286.3c5.953-6.838 16.09-7.259 22.61-1.134L176 425.9V48.59c0-9.171 7.156-16.59 15.1-16.59S208 39.42 208 48.59v377.3l149.2-140.7c6.516-6.125 16.66-5.704 22.61 1.134C385.8 293.1 385.3 303.6 378.8 309.8z">
+                                            </path>
+                                        </svg></span>
+                                    <h5 class="text-lg text-neutral-800">Can I also complete tasks using
+                                        my smartphone?
+                                    </h5>
+                                </div>
+                                <div class="pt-3" x-show="open">
+                                    <p class="text-base text-gray-500">Monetars also offers a variety of mobile tasks,
+                                        so you can test games or participate in surveys on the go.</p>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="bg-white shadow-md rounded-md px-6 py-3" x-data="{open : false}">
-                            <div class="flex items-center justify-between space-x-4 cursor-pointer"
-                                @click="open = !open">
-                                <h5 class="text-lg text-neutral-800 font-semibold">When can I make my first
-                                    withdrawal?</h5>
-                                <svg class="w-5 text-neutral-800 shrink-0 transition-all"
-                                    :class="open ? 'rotate-180' : ''" viewBox="0 0 24 24">
-                                    <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <path d="M6 9l6 6l6-6"></path>
-                                    </g>
-                                </svg>
-                            </div>
-                            <div class="pt-3" x-show="open">
-                                <p class="text-base text-gray-500">The smallest withdrawal is 5000 coins. This
-                                    corresponds to a value of 5,00$.
-                                    You can withdraw your coins as Paypal/ Visa credits or in various vouchers.</p>
-                            </div>
-                        </div>
-
-                        <div class="bg-white shadow-md rounded-md px-6 py-3" x-data="{open : false}">
-                            <div class="flex items-center justify-between space-x-4 cursor-pointer"
-                                @click="open = !open">
-                                <h5 class="text-lg text-neutral-800 font-semibold">When will I receive my payout?
-                                </h5>
-                                <svg class="w-5 text-neutral-800 shrink-0 transition-all"
-                                    :class="open ? 'rotate-180' : ''" viewBox="0 0 24 24">
-                                    <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <path d="M6 9l6 6l6-6"></path>
-                                    </g>
-                                </svg>
-                            </div>
-                            <div class="pt-3" x-show="open">
-                                <p class="text-base text-gray-500">Payouts are usually processed within a few
-                                    minutes
-                                    to a few hours.
-                                    This means that you will receive your money on the same day.</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <!-- FAQ Section End -->
