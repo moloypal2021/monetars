@@ -655,93 +655,88 @@
                     <div class="py-4">
                         <h4 class="text-2xl font-medium text-center">FAQ</h4>
                     </div>
-                    <div class="grid lg:grid-cols-12 gap-8 py-6 items-center">
-                        <div class="lg:col-span-4 xl:col-span-5 2xl:col-span-6">
-                            <img src="./assets/img/faq.png" alt="" class="w-48 mx-auto">
+
+                    <div class="max-w-3xl mx-auto space-y-3">
+                        <div class="bg-white shadow-md rounded-md px-6 py-3" x-data="{open : false}">
+                            <div class="flex items-center justify-between space-x-4 cursor-pointer"
+                                @click="open = !open">
+                                <h5 class="text-lg text-neutral-800 font-semibold">How does Monetars work? </h5>
+                                <svg class="w-5 text-neutral-800 shrink-0 transition-all"
+                                    :class="open ? 'rotate-180' : ''" viewBox="0 0 24 24">
+                                    <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="M6 9l6 6l6-6"></path>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="pt-3" x-show="open">
+                                <p class="text-base text-gray-500">Monetars works with various game publishers,
+                                    survey
+                                    providers and websites.
+                                    Manufacturers and providers pay Monetars for Monetars members to test the
+                                    websites/games.</p>
+                            </div>
                         </div>
 
-                        <div class="lg:col-span-8 xl:col-span-7 2xl:col-span-6 space-y-3">
-                            <div class="bg-white shadow-md rounded-md px-6 py-3" x-data="{open : false}">
-                                <div class="flex items-center justify-between space-x-4 cursor-pointer"
-                                    @click="open = !open">
-                                    <h5 class="text-lg text-neutral-800 font-semibold">How does Monetars work? </h5>
-                                    <svg class="w-5 text-neutral-800 shrink-0 transition-all"
-                                        :class="open ? 'rotate-180' : ''" viewBox="0 0 24 24">
-                                        <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round">
-                                            <path d="M6 9l6 6l6-6"></path>
-                                        </g>
-                                    </svg>
-                                </div>
-                                <div class="pt-3" x-show="open">
-                                    <p class="text-base text-gray-500">Monetars works with various game publishers,
-                                        survey
-                                        providers and websites.
-                                        Manufacturers and providers pay Monetars for Monetars members to test the
-                                        websites/games.</p>
-                                </div>
+                        <div class="bg-white shadow-md rounded-md px-6 py-3" x-data="{open : false}">
+                            <div class="flex items-center justify-between space-x-4 cursor-pointer"
+                                @click="open = !open">
+                                <h5 class="text-lg text-neutral-800 font-semibold">How much money can I earn on
+                                    Monetars?</h5>
+                                <svg class="w-5 text-neutral-800 shrink-0 transition-all"
+                                    :class="open ? 'rotate-180' : ''" viewBox="0 0 24 24">
+                                    <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="M6 9l6 6l6-6"></path>
+                                    </g>
+                                </svg>
                             </div>
-
-                            <div class="bg-white shadow-md rounded-md px-6 py-3" x-data="{open : false}">
-                                <div class="flex items-center justify-between space-x-4 cursor-pointer"
-                                    @click="open = !open">
-                                    <h5 class="text-lg text-neutral-800 font-semibold">How much money can I earn on
-                                        Monetars?</h5>
-                                    <svg class="w-5 text-neutral-800 shrink-0 transition-all"
-                                        :class="open ? 'rotate-180' : ''" viewBox="0 0 24 24">
-                                        <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round">
-                                            <path d="M6 9l6 6l6-6"></path>
-                                        </g>
-                                    </svg>
-                                </div>
-                                <div class="pt-3" x-show="open">
-                                    <p class="text-base text-gray-500">There is no limit to how much you can earn. We
-                                        have
-                                        a variety of ways to earn money with us. Some of our members earn hundreds of
-                                        dollars a month.</p>
-                                </div>
+                            <div class="pt-3" x-show="open">
+                                <p class="text-base text-gray-500">There is no limit to how much you can earn. We
+                                    have
+                                    a variety of ways to earn money with us. Some of our members earn hundreds of
+                                    dollars a month.</p>
                             </div>
+                        </div>
 
-                            <div class="bg-white shadow-md rounded-md px-6 py-3" x-data="{open : false}">
-                                <div class="flex items-center justify-between space-x-4 cursor-pointer"
-                                    @click="open = !open">
-                                    <h5 class="text-lg text-neutral-800 font-semibold">When can I make my first
-                                        withdrawal?</h5>
-                                    <svg class="w-5 text-neutral-800 shrink-0 transition-all"
-                                        :class="open ? 'rotate-180' : ''" viewBox="0 0 24 24">
-                                        <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round">
-                                            <path d="M6 9l6 6l6-6"></path>
-                                        </g>
-                                    </svg>
-                                </div>
-                                <div class="pt-3" x-show="open">
-                                    <p class="text-base text-gray-500">The smallest withdrawal is 5000 coins. This
-                                        corresponds to a value of 5,00$.
-                                        You can withdraw your coins as Paypal/ Visa credits or in various vouchers.</p>
-                                </div>
+                        <div class="bg-white shadow-md rounded-md px-6 py-3" x-data="{open : false}">
+                            <div class="flex items-center justify-between space-x-4 cursor-pointer"
+                                @click="open = !open">
+                                <h5 class="text-lg text-neutral-800 font-semibold">When can I make my first
+                                    withdrawal?</h5>
+                                <svg class="w-5 text-neutral-800 shrink-0 transition-all"
+                                    :class="open ? 'rotate-180' : ''" viewBox="0 0 24 24">
+                                    <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="M6 9l6 6l6-6"></path>
+                                    </g>
+                                </svg>
                             </div>
+                            <div class="pt-3" x-show="open">
+                                <p class="text-base text-gray-500">The smallest withdrawal is 5000 coins. This
+                                    corresponds to a value of 5,00$.
+                                    You can withdraw your coins as Paypal/ Visa credits or in various vouchers.</p>
+                            </div>
+                        </div>
 
-                            <div class="bg-white shadow-md rounded-md px-6 py-3" x-data="{open : false}">
-                                <div class="flex items-center justify-between space-x-4 cursor-pointer"
-                                    @click="open = !open">
-                                    <h5 class="text-lg text-neutral-800 font-semibold">When will I receive my payout?
-                                    </h5>
-                                    <svg class="w-5 text-neutral-800 shrink-0 transition-all"
-                                        :class="open ? 'rotate-180' : ''" viewBox="0 0 24 24">
-                                        <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round">
-                                            <path d="M6 9l6 6l6-6"></path>
-                                        </g>
-                                    </svg>
-                                </div>
-                                <div class="pt-3" x-show="open">
-                                    <p class="text-base text-gray-500">Payouts are usually processed within a few
-                                        minutes
-                                        to a few hours.
-                                        This means that you will receive your money on the same day.</p>
-                                </div>
+                        <div class="bg-white shadow-md rounded-md px-6 py-3" x-data="{open : false}">
+                            <div class="flex items-center justify-between space-x-4 cursor-pointer"
+                                @click="open = !open">
+                                <h5 class="text-lg text-neutral-800 font-semibold">When will I receive my payout?
+                                </h5>
+                                <svg class="w-5 text-neutral-800 shrink-0 transition-all"
+                                    :class="open ? 'rotate-180' : ''" viewBox="0 0 24 24">
+                                    <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="M6 9l6 6l6-6"></path>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="pt-3" x-show="open">
+                                <p class="text-base text-gray-500">Payouts are usually processed within a few
+                                    minutes
+                                    to a few hours.
+                                    This means that you will receive your money on the same day.</p>
                             </div>
                         </div>
                     </div>
