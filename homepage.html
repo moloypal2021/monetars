@@ -1,0 +1,1648 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Monetars">
+    <meta name="author" content="Monetars">
+    <meta name="generator" content="">
+    <!--  Favicons-->
+    <title>Monetars - Home</title>
+    <!-- Fontawesome Icons -->
+    <link rel="stylesheet" href="assets/fontawesome/css/all.css">
+    <!-- Slick CSS-->
+    <link rel="stylesheet" href="assets/slick/slick.css">
+    <link rel="stylesheet" href="assets/slick/slick-theme.css">
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- TAILWINDCSS OUTPUT -->
+    <link href="dist/output.css" rel="stylesheet">
+
+    <!-- Alpine JS -->
+    <script defer src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js"></script>
+</head>
+
+<body>
+
+    <!--Header Starts-->
+    <header class="sticky top-0 z-50">
+        <nav class="relative md:flex hidden justify-between items-center flex-wrap py-2 px-2 bg-white shadow-md">
+            <a class="pt-1 pb-1 mr-4 text-xl whitespace-nowrap" href="index.html">
+                <img src="assets/img/Monester-logo.png" alt="Monster Logo" style="width:200px; height: 50px">
+            </a>
+            <button onclick="blockToggle(dropdownMenu3)" class="xl:hidden block py-1 px-3 text-xl">
+                <span class="flex w-6 h-6 align-middle justify-center items-center ">
+                    <i class="fal fa-align-right text-blue-800"></i>
+                </span>
+            </button>
+            <div class="xl:flex hidden xl:basis-auto basis-full grow items-center" id="dropdownMenu3">
+                <ul class="flex xl:flex-row flex-col mx-auto lg:mb-0 mb-2 ">
+                    <li class="nav-item">
+                        <a class="block py-2 px-3 text-neutral-500 hover:text-blue-800" aria-current="page"
+                            href="earn.html">
+                            <i class="fal fa-dollar-sign px-2"></i>Earn
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="block py-2 px-3 text-neutral-500 hover:text-blue-800" href="withdraw.html">
+                            <i class="fal fa-credit-card-front px-2"></i>Withdraw
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="block py-2 px-3 text-neutral-500 hover:text-blue-800" href="leaders.html">
+                            <i class="fal fa-star px-2"></i>Leaders
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a onclick="blockToggle(promoModal)"
+                            class="block py-2 px-3 text-neutral-500 hover:text-blue-800" href="javascript:void(0);">
+                            <i class="fal fa-gift px-2"></i>Promo
+                        </a>
+                    </li>
+                </ul>
+                <div class="my-1">
+                    <span class="py-1 px-2 text-sm rounded-xl text-neutral-500 bg-indigo-200">
+                        0 <i class="fal fa-usd-circle ml-1 p-[2px] rounded-[50%] text-white bg-yellow-400"></i>
+                    </span>
+                    <span class="py-1 px-2 mx-3 text-sm rounded-xl text-neutral-500 bg-indigo-200">
+                        0 <i class="fal fa-lock-alt ml-1 p-[2px] rounded-full text-white bg-yellow-400"></i>
+                    </span>
+                </div>
+                <div class="my-1">
+                    <div class="relative">
+                        <button onclick="blockToggle(dropdownMenu1)"
+                            class="flex py-1 px-2 text-sm justify-start items-center bg-indigo-200">
+                            <img class="w-9 h-9" src="assets/img/Ellipse 54.png"><span class="mx-2">MacMa</span><i
+                                class="fal fa-chevron-down"></i>
+                        </button>
+                        <ul class="absolute hidden top-full left-0 mt-1 text-left text-base rounded shadow-md text-neutral-800 bg-white z-50"
+                            style="min-width: 130px !important;" id="dropdownMenu1">
+                            <li><a class="block w-full py-1 px-4 text-sm clear-both whitespace-nowrap text-neutral-500 hover:bg-blue-800 hover:text-white"
+                                    href="profile.html"><i class="fal fa-user-circle mr-2"></i>User Profile</a>
+                            </li>
+                            <li><a class="block w-full py-1 px-4 text-sm clear-both whitespace-nowrap text-neutral-500 hover:bg-blue-800 hover:text-white"
+                                    href="#"><i class="fal fa-sign-out-alt mr-2"></i>Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <div class="relative">
+                        <button onclick="blockToggle(dropdownMenu2)" class="flex justify-center items-center py-1 px-3">
+                            <div>
+                                <img src="assets/img/united-states.png" class="inline-block rounded">
+                            </div>
+                            <div>
+                                <span class="ml-2"><i class="fal fa-chevron-down"
+                                        style="font-size: 10px;font-weight: bold;"></i></span>
+                            </div>
+                        </button>
+                        <ul class="absolute hidden w-40 py-2 top-full left-0 mt-1 text-left text-base rounded shadow-md text-neutral-800 bg-white z-50"
+                            id="dropdownMenu2">
+                            <li><a class="block w-full py-1 px-4 clear-both whitespace-nowrap text-sm text-neutral-500 hover:bg-blue-800 hover:text-white"
+                                    href="#">
+                                    <img src="assets/img/united-states.png" class="inline-block rounded"><span
+                                        class="ml-2">United States</span>
+                                </a></li>
+                            <li><a class="block w-full py-1 px-4 clear-both whitespace-nowrap text-sm text-neutral-500 hover:bg-blue-800 hover:text-white"
+                                    href="#">
+                                    <img src="assets/img/germany.png" class="inline-block rounded"><span
+                                        class="ml-2">Deutchlld</span>
+                                </a></li>
+                            <li><a class="block w-full py-1 px-4 clear-both whitespace-nowrap text-sm text-neutral-500 hover:bg-blue-800 hover:text-white"
+                                    href="#">
+                                    <img src="assets/img/spain.png" class="inline-block rounded"><span
+                                        class="ml-2">Espla</span>
+                                </a></li>
+                            <li><a class="block w-full py-1 px-4 clear-both whitespace-nowrap text-sm text-neutral-500 hover:bg-blue-800 hover:text-white"
+                                    href="#">
+                                    <img src="assets/img/france.png" class="inline-block rounded"><span
+                                        class="ml-2">Frale</span>
+                                </a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="space-x-2 items-center flex ml-2">
+                    <button onclick="blockToggle(logModal)"
+                        class="inline-flex space-x-2 py-3 px-6 text-sm text-neutral-800 bg-indigo-200">
+                        <svg class="w-3.5" viewBox="0 0 14 14" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M9.38696 7.4933C10.0508 6.95765 10.5353 6.22311 10.7731 5.39188C11.0109 4.56065 10.9902 3.67405 10.7139 2.85544C10.4376 2.03684 9.91932 1.32692 9.23128 0.824467C8.54324 0.322012 7.71961 0.052002 6.87498 0.052002C6.03035 0.052002 5.20673 0.322012 4.51869 0.824467C3.83064 1.32692 3.3124 2.03684 3.03606 2.85544C2.75972 3.67405 2.73903 4.56065 2.97685 5.39188C3.21468 6.22311 3.6992 6.95765 4.363 7.4933C3.22556 7.96069 2.23309 8.7359 1.49142 9.7363C0.749747 10.7367 0.286666 11.9248 0.151545 13.1738C0.141764 13.265 0.149593 13.3573 0.174583 13.4454C0.199573 13.5335 0.241236 13.6157 0.297193 13.6873C0.410204 13.8318 0.574576 13.9244 0.754149 13.9447C0.933723 13.9649 1.11379 13.9112 1.25473 13.7953C1.39568 13.6794 1.48596 13.5108 1.50571 13.3266C1.65439 11.9691 2.2855 10.7154 3.27846 9.80496C4.27143 8.89453 5.55663 8.39124 6.88853 8.39124C8.22042 8.39124 9.50562 8.89453 10.4986 9.80496C11.4916 10.7154 12.1227 11.9691 12.2713 13.3266C12.2897 13.4973 12.3691 13.6549 12.4942 13.769C12.6192 13.8831 12.781 13.9457 12.9484 13.9447H13.0229C13.2004 13.9237 13.3626 13.8317 13.4742 13.6886C13.5858 13.5455 13.6378 13.363 13.6187 13.1808C13.483 11.9282 13.0174 10.737 12.2719 9.73511C11.5264 8.73318 10.5291 7.95822 9.38696 7.4933ZM6.87498 7.00025C6.33933 7.00025 5.8157 6.83734 5.37031 6.53211C4.92493 6.22688 4.5778 5.79306 4.37281 5.28548C4.16782 4.77791 4.11419 4.2194 4.21869 3.68056C4.32319 3.14173 4.58113 2.64677 4.9599 2.2583C5.33867 1.86982 5.82125 1.60526 6.34661 1.49808C6.87198 1.3909 7.41654 1.44591 7.91142 1.65615C8.4063 1.86639 8.82929 2.22243 9.12688 2.67923C9.42448 3.13603 9.58332 3.67309 9.58332 4.22248C9.58332 4.95919 9.29798 5.66573 8.79006 6.18666C8.28215 6.70759 7.59328 7.00025 6.87498 7.00025Z"
+                                fill="param(fill)"></path>
+                        </svg>
+                        <span>Login</span>
+                    </button>
+                    <button onclick="blockToggle(registerModal)"
+                        class="inline-flex items-center space-x-2 py-3 px-6 text-sm text-white bg-blue-800 hover:bg-blue-900">
+                        <svg class="w-3.5" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M2.2934 13.2501L1.80728 13.7432C1.67652 13.8739 1.49916 13.9474 1.31423 13.9474C1.1293 13.9474 0.95194 13.8739 0.821173 13.7432C0.690407 13.6124 0.616943 13.435 0.616943 13.2501C0.616943 13.0652 0.690407 12.8878 0.821173 12.7571L1.80034 11.7848L3.76562 9.81955L8.14062 5.43761C7.66689 4.71958 7.47657 3.85127 7.60651 3.00092C7.73646 2.15057 8.17744 1.37873 8.84399 0.83496C9.51054 0.291187 10.3552 0.0141972 11.2143 0.0576614C12.0735 0.101126 12.8859 0.461949 13.4941 1.07022C14.1024 1.67848 14.4632 2.49089 14.5067 3.35001C14.5501 4.20913 14.2732 5.0538 13.7294 5.72035C13.1856 6.3869 12.4138 6.82787 11.5634 6.95782C10.7131 7.08777 9.84476 6.89744 9.12673 6.42372L5.23784 10.3057L6.71701 11.7779C6.7813 11.8426 6.83221 11.9194 6.86683 12.0038C6.90145 12.0883 6.9191 12.1787 6.91878 12.2699C6.91846 12.3612 6.90017 12.4515 6.86495 12.5356C6.82974 12.6198 6.77828 12.6962 6.71353 12.7605C6.64879 12.8248 6.57201 12.8757 6.48758 12.9103C6.40316 12.945 6.31274 12.9626 6.2215 12.9623C6.13025 12.962 6.03996 12.9437 5.95578 12.9085C5.87161 12.8733 5.79519 12.8218 5.7309 12.7571L4.25867 11.2848L3.27951 12.2709L3.76562 12.7571C3.83037 12.8213 3.88182 12.8978 3.91703 12.9819C3.95225 13.0661 3.97054 13.1564 3.97087 13.2477C3.97119 13.3389 3.95353 13.4293 3.91891 13.5137C3.88429 13.5982 3.83338 13.6749 3.76909 13.7397C3.7048 13.8044 3.62838 13.8559 3.5442 13.8911C3.46003 13.9263 3.36974 13.9446 3.27849 13.9449C3.18724 13.9453 3.09683 13.9276 3.0124 13.893C2.92798 13.8584 2.8512 13.8075 2.78645 13.7432L2.2934 13.2501ZM13.1198 3.52789C13.1198 3.11584 12.9976 2.71305 12.7687 2.37045C12.5398 2.02785 12.2144 1.76082 11.8337 1.60314C11.453 1.44545 11.0341 1.4042 10.63 1.48458C10.2259 1.56497 9.85467 1.76339 9.56331 2.05475C9.27195 2.34611 9.07353 2.71732 8.99315 3.12145C8.91276 3.52557 8.95402 3.94446 9.1117 4.32514C9.26939 4.70582 9.53641 5.03119 9.87901 5.26011C10.2216 5.48903 10.6244 5.61122 11.0365 5.61122C11.589 5.61122 12.1189 5.39173 12.5096 5.00103C12.9003 4.61032 13.1198 4.08042 13.1198 3.52789Z"
+                                fill="white"></path>
+                        </svg>
+                        <span>Register</span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <div class="md:hidden flex p-2 bg-white justify-between items-center z-50">
+            <div>
+                <div>
+                    <button onclick="flexToggle(sidebarMenu1)" class="relative mx-1 py-1 px-2 text-sm bg-white">
+                        <i class="fal fa-align-left text-xl text-blue-800"></i>
+                    </button>
+                </div>
+            </div>
+            <div>
+                <div class="my-1">
+                    <div class="relative">
+                        <button onclick="blockToggle(dropdownMenu4)"
+                            class="flex justify-start items-center p-1 text-sm bg-indigo-200">
+                            <div>
+                                <span style="border-radius: 3px; background-color: white; padding: 12px 14px;">D</span>
+                            </div>
+                            <div class="pl-2">
+                                <span style="font-size: 10px;">david007</span>
+                                <div class="bg-white"
+                                    style="padding: 0px 4px; border-radius: 3px; width: 80px !important;">
+                                    <div role="profile" id="unlock" class="block text-neutral-500"
+                                        style="font-size: 10px;"><i class="fal fa-usd-circle mr-1"
+                                            style="font-size: 10px;"></i>
+                                        0.05<i class="fal fa-chevron-down ml-2" style="font-size: 9px;"></i></div>
+                                    <div role="profile" id="locked" class="hidden text-neutral-500"
+                                        style="font-size: 10px;"><i class="fal fa-lock-alt mr-1"
+                                            style="font-size: 10px;"></i>5.0<i class="fal fa-chevron-down ml-2"
+                                            style="font-size: 9px;"></i></div>
+                                </div>
+                            </div>
+                        </button>
+                        <ul id="dropdownMenu4" class="absolute shadow-lg rounded z-[999999999999] w-full bg-white"
+                            style="min-width: 120px !important; inset: 0px 0px auto auto; margin: 0px; transform: translate3d(0.400009px, 54px, 0px);">
+                            <li class="block w-full py-1 px-4 clear-both whitespace-nowrap text-sm text-neutral-500">
+                                <div class="flex justify-between items-center h-6 mb-1 text-sm text-neutral-500">
+                                    <div class="relative flex">
+                                        <div id="track" class="border border-neutral-500 h-3 w-6 rounded-md"></div>
+                                        <button role="profileBtn" id="unlockBtn"
+                                            onclick="unlockToggle(lockedBtn, locked)"
+                                            class="block w-2 h-2 bg-neutral-500 rounded-full absolute left-1 top-1/2 -translate-y-1/2"></button>
+                                        <button role="profileBtn" id="lockedBtn"
+                                            onclick="unlockToggle(unlockBtn, unlock)"
+                                            class="hidden w-2 h-2 bg-white rounded-full absolute right-1 top-1/2 -translate-y-1/2"></button>
+                                    </div>
+                                    <label class="form-check-label" style="font-size: 11px;"
+                                        for="flexSwitchCheckDefault">Lock Balance</label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slider starts-->
+        <div class="relative p-2 bg-indigo-50">
+            <div class="slider">
+                <div class="w-full">
+                    <div class="relative flex justify-between items-center rounded-lg mr-2 bg-blue-800 silder-item z-[auto]"
+                        title="Offername: Daily Bonus (Monetars); Offerwall: Monetars; Reward: 33 coins">
+                        <div class="w-2/5 py-2 rounded-lg text-center bg-blue-900 text-white">
+                            <a class="inline-block text-white" onclick="blockToggle(userModal)">
+                                <span>100<i
+                                        class="fal fa-usd-circle rounded-full ml-1 bg-yellow-500 text-neutral-500"></i></span>
+                            </a>
+                        </div>
+                        <div class="w-3/5 p-2 text-left text-white">
+                            <a class="inline-block text-white" onclick="blockToggle(userModal)">
+                                <span><span
+                                        class="w-6 h-6 mr-1 inline-block text-center rounded-full text-base text-white bg-orange-600">s</span>Somuch...</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full">
+                    <div class="relative flex justify-between items-center rounded-lg mr-2 bg-blue-800 silder-item z-[auto]"
+                        title="Offername: Daily Bonus (Monetars); Offerwall: Monetars; Reward: 33 coins">
+                        <div class="w-2/5 py-2 rounded-lg text-center bg-blue-900 text-white">
+                            <a class="inline-block text-white" onclick="blockToggle(userModal)">
+                                <span>100<i
+                                        class="fal fa-usd-circle rounded-full ml-1 bg-yellow-500 text-neutral-500"></i></span>
+                            </a>
+                        </div>
+                        <div class="w-3/5 p-2 text-left text-white">
+                            <a class="inline-block text-white" onclick="blockToggle(userModal)">
+                                <span><span
+                                        class="w-6 h-6 mr-1 inline-block text-center rounded-full text-base text-white bg-orange-600">s</span>Somuch...</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full">
+                    <div class="relative flex justify-between items-center rounded-lg mr-2 bg-blue-800 silder-item z-[auto]"
+                        title="Offername: Daily Bonus (Monetars); Offerwall: Monetars; Reward: 33 coins">
+                        <div class="w-2/5 py-2 rounded-lg text-center bg-blue-900 text-white">
+                            <a class="inline-block text-white" onclick="blockToggle(userModal)">
+                                <span>100<i
+                                        class="fal fa-usd-circle rounded-full ml-1 bg-yellow-500 text-neutral-500"></i></span>
+                            </a>
+                        </div>
+                        <div class="w-3/5 p-2 text-left text-white">
+                            <a class="inline-block text-white" onclick="blockToggle(userModal)">
+                                <span><span
+                                        class="w-6 h-6 mr-1 inline-block text-center rounded-full text-base text-white bg-orange-600">s</span>Somuch...</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full">
+                    <div class="relative flex justify-between items-center rounded-lg mr-2 bg-blue-800 silder-item z-[auto]"
+                        title="Offername: Daily Bonus (Monetars); Offerwall: Monetars; Reward: 33 coins">
+                        <div class="w-2/5 py-2 rounded-lg text-center bg-blue-900 text-white">
+                            <a class="inline-block text-white" onclick="blockToggle(userModal)">
+                                <span>100<i
+                                        class="fal fa-usd-circle rounded-full ml-1 bg-yellow-500 text-neutral-500"></i></span>
+                            </a>
+                        </div>
+                        <div class="w-3/5 p-2 text-left text-white">
+                            <a class="inline-block text-white" onclick="blockToggle(userModal)">
+                                <span><span
+                                        class="w-6 h-6 mr-1 inline-block text-center rounded-full text-base text-white bg-orange-600">s</span>Somuch...</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full">
+                    <div class="relative flex justify-between items-center rounded-lg mr-2 bg-blue-800 silder-item z-[auto]"
+                        title="Offername: Daily Bonus (Monetars); Offerwall: Monetars; Reward: 33 coins">
+                        <div class="w-2/5 py-2 rounded-lg text-center bg-blue-900 text-white">
+                            <a class="inline-block text-white" onclick="blockToggle(userModal)">
+                                <span>100<i
+                                        class="fal fa-usd-circle rounded-full ml-1 bg-yellow-500 text-neutral-500"></i></span>
+                            </a>
+                        </div>
+                        <div class="w-3/5 p-2 text-left text-white">
+                            <a class="inline-block text-white" onclick="blockToggle(userModal)">
+                                <span><span
+                                        class="w-6 h-6 mr-1 inline-block text-center rounded-full text-base text-white bg-orange-600">s</span>Somuch...</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full">
+                    <div class="relative flex justify-between items-center rounded-lg mr-2 bg-blue-800 silder-item z-[auto]"
+                        title="Offername: Daily Bonus (Monetars); Offerwall: Monetars; Reward: 33 coins">
+                        <div class="w-2/5 py-2 rounded-lg text-center bg-blue-900 text-white">
+                            <a class="inline-block text-white" onclick="blockToggle(userModal)">
+                                <span>100<i
+                                        class="fal fa-usd-circle rounded-full ml-1 bg-yellow-500 text-neutral-500"></i></span>
+                            </a>
+                        </div>
+                        <div class="w-3/5 p-2 text-left text-white">
+                            <a class="inline-block text-white" onclick="blockToggle(userModal)">
+                                <span><span
+                                        class="w-6 h-6 mr-1 inline-block text-center rounded-full text-base text-white bg-orange-600">s</span>Somuch...</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full">
+                    <div class="relative flex justify-between items-center rounded-lg mr-2 bg-blue-800 silder-item z-[auto]"
+                        title="Offername: Daily Bonus (Monetars); Offerwall: Monetars; Reward: 33 coins">
+                        <div class="w-2/5 py-2 rounded-lg text-center bg-blue-900 text-white">
+                            <a class="inline-block text-white" onclick="blockToggle(userModal)">
+                                <span>100<i
+                                        class="fal fa-usd-circle rounded-full ml-1 bg-yellow-500 text-neutral-500"></i></span>
+                            </a>
+                        </div>
+                        <div class="w-3/5 p-2 text-left text-white">
+                            <a class="inline-block text-white" onclick="blockToggle(userModal)">
+                                <span><span
+                                        class="w-6 h-6 mr-1 inline-block text-center rounded-full text-base text-white bg-orange-600">s</span>Somuch...</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full">
+                    <div class="relative flex justify-between items-center rounded-lg mr-2 bg-blue-800 silder-item z-[auto]"
+                        title="Offername: Daily Bonus (Monetars); Offerwall: Monetars; Reward: 33 coins">
+                        <div class="w-2/5 py-2 rounded-lg text-center bg-blue-900 text-white">
+                            <a class="inline-block text-white" onclick="blockToggle(userModal)">
+                                <span>100<i
+                                        class="fal fa-usd-circle rounded-full ml-1 bg-yellow-500 text-neutral-500"></i></span>
+                            </a>
+                        </div>
+                        <div class="w-3/5 p-2 text-left text-white">
+                            <a class="inline-block text-white" onclick="blockToggle(userModal)">
+                                <span><span
+                                        class="w-6 h-6 mr-1 inline-block text-center rounded-full text-base text-white bg-orange-600">s</span>Somuch...</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Slider ends-->
+    </header>
+    <!--Header Ends-->
+
+    <!-- Profile Sidebar Starts not used -->
+    <div
+        class="fixed right-0 md:top-36 top-32 w-px h-px bg-white rounded-bl-md rounded-tl-md shadow-md md:block hidden z-40">
+        <div class="relative w-full h-full bg-transparent">
+            <span onclick="blockToggle(profileSidebar); footerSink()"
+                class="absolute flex visible -left-10 top-0 w-9 h-9 bg-blue-800 justify-center items-center rounded-bl-md rounded-tl-md cursor-pointer z-50"><i
+                    class="fal fa-arrow-left text-xs text-white font-bold"></i></span>
+            <span
+                class="absolute flex invisible justify-center items-center -left-10 top-0 w-9 h-9 rounded-bl-xl rounded-tl-xl bg-blue-800 z-50"><i
+                    class="fal fa-arrow-left text-white"></i></span>
+            <div class="flex invisible justify-center items-center w-full h-11 text-center bg-blue-200">
+                <i class="fal fa-comment-alt-lines text-blue-800 text-3xl"></i>
+            </div>
+            <div class="w-full p-2 text-center invisible">
+                <span class="block py-2">
+                    <a onclick="blockToggle(userModal)">
+                        <img src="assets/img/Ellipse 53.png"
+                            class="w-[50px] h-[50px] rounded-full object-fill shadow-md object-top">
+                    </a>
+                </span>
+                <span class="block py-2">
+                    <a href="#user-modal">
+                        <img src="assets/img/Ellipse 53.png"
+                            class="w-[50px] h-[50px] rounded-full object-fill shadow-md object-top">
+                    </a>
+                </span>
+                <span class="block py-2">
+                    <a href="#user-modal">
+                        <img src="assets/img/Ellipse 53.png"
+                            class="w-[50px] h-[50px] rounded-full object-fill shadow-md object-top">
+                    </a>
+                </span>
+                <span class="block py-2">
+                    <a href="#user-modal">
+                        <img src="assets/img/Ellipse 53.png"
+                            class="w-[50px] h-[50px] rounded-full object-fill shadow-md object-top">
+                    </a>
+                </span>
+                <span class="block py-2">
+                    <a href="#user-modal">
+                        <img src="assets/img/Ellipse 53.png"
+                            class="w-[50px] h-[50px] rounded-full object-fill shadow-md object-top">
+                    </a>
+                </span>
+            </div>
+        </div>
+    </div>
+    <!-- Profile Sidebar Ends -->
+
+    <!-- Sections Starts -->
+    <div class="flex justify-center bg-indigo-50">
+        <div class="relative w-full min-h-screen bg-indigo-50">
+            <!--Main Section Starts-->
+            <div class="py-12 px-4 bg-indigo-50">
+                <!-- First Section Starts-->
+                <div class="lg:w-2/3 w-full mx-auto">
+                    <div class="bg-white rounded-xl shadow-lg px-4 py-2">
+                        <div class="flex flex-col md:flex-row relative">
+                            <div class="md:w-1/3 w-full">
+                                <img src="assets/img/man-with-money.png" alt="Man With Money"
+                                    class="relative h-52 -top-8 left-1">
+                            </div>
+                            <div class="md:w-2/3 w-full">
+                                <div class="mt-12">
+                                    <p class="pb-2">Get rewarded for watching videos & completing tasks.
+                                    </p>
+                                    <p class="pb-4">Earn free <a href="#"
+                                            class="capitalize text-blue-800 font-bold">Google Play
+                                            Funds</a></p>
+                                    <div class="text-end">
+                                        <button
+                                            class="inline-block bg-blue-800 text-white hover:bg-blue-900 text-center align-middle py-2  px-3 rounded-md items-center text-base">Start
+                                            Earning</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- First Section Ends-->
+
+                <!-- Little Stats section starts-->
+                <div class="lg:w-2/3 w-full mx-auto mt-6">
+                    <div class="">
+                        <div class="flex flex-wrap md:divide-x p-4 rounded-xl bg-blue-800">
+                            <div class="md:basis-1/3 basis-full my-2 px-2">
+                                <div class="flex md:justify-center items-center">
+                                    <div>
+                                        <span class="flex justify-center items-center w-14 h-14 rounded-full bg-white">
+                                            <i class="fal fa-dollar-sign text-blue-800 text-2xl"></i>
+                                        </span>
+                                    </div>
+                                    <div class="pl-3">
+                                        <span class="block text-white"><b>1,60,976,654</b></span>
+                                        <span class="block text-white">Total Coins Earned</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="md:basis-1/3 basis-full my-2 px-2">
+                                <div class="flex md:justify-center items-center">
+                                    <div>
+                                        <span class="flex justify-center items-center w-14 h-14 rounded-full bg-white">
+                                            <i class="fal fa-user-alt text-blue-800 text-2xl"></i>
+                                        </span>
+                                    </div>
+                                    <div class="pl-3">
+                                        <span class="block text-white"><b>356,831</b></span>
+                                        <span class="block text-white">Total Users</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="md:basis-1/3 basis-full my-2 px-2">
+                                <div class="flex md:justify-center items-center">
+                                    <div>
+                                        <span class="flex justify-center items-center w-14 h-14 rounded-full bg-white">
+                                            <i class="fal fa-pencil text-blue-800 text-2xl"></i>
+                                        </span>
+                                    </div>
+                                    <div class="pl-3">
+                                        <span class="block text-white"><b>314,575</b></span>
+                                        <span class="block text-white">Tasks Completed</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Little Stats section ends-->
+
+
+                <!-- How It works section starts-->
+                <div class="lg:w-2/3 w-full mx-auto mb-6">
+                    <div class="py-6">
+                        <h4 class="text-center text-2xl font-medium mb-2">How does it work?</h4>
+                        <p class="text-center text-xl text-neutral-500">Register and earn money on the Internet with
+                            simple steps</p>
+                    </div>
+                    <div class="flex flex-wrap justify-center 2xl:justify-between py-6 -mx-2">
+                        <div class="2xl:basis-1/3 md:basis-1/2 basis-full mt-2 mb-6 px-2">
+                            <div
+                                class="relative rounded-lg w-full 2xl:h-full h-48 max-h-48 before:content-[''] before:w-full before:h-full before:rounded-lg before:absolute before:inset-0 before:bg-white/40 before:z-10 p-4">
+                                <h1
+                                    class="text-2xl font-bold bg-blue-800 text-white absolute top-0 left-8 -translate-y-1/3 z-10 w-12 h-12 flex items-center justify-center rounded-full">
+                                    01
+                                </h1>
+                                <div
+                                    class="px-4 py-3.5 rounded-lg relative shadow-[0px_0px_8px] shadow-indigo-500/40 w-full h-full bg-white overflow-hidden before:content-[''] before:absolute before:inset-0 before:bg-[url('../assets/img/blog-1.jpg')] before:opacity-20 before:blur-sm">
+                                    <div class="relative z-10 text-center">
+                                        <h5 class="text-lg font-bold text-blue-800 text-center mb-1">Sign Up on Monetars
+                                        </h5>
+                                        <p class="text-sm text-slate-500 font-medium text-center mb-4">Register and then
+                                            click Earn</p>
+                                        <div
+                                            class="inline-flex bg-blue-800 text-white px-8 py-2 rounded text-xs font-medium uppercase shadow-inner relative">
+                                            <img src="./assets/img/hand.png" alt=""
+                                                class="absolute top-2 w-12 right-0  -rotate-45">
+                                            Register
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="2xl:basis-1/3 md:basis-1/2 basis-full mt-2 mb-6 px-2">
+                            <div
+                                class="relative rounded-lg w-full 2xl:h-full h-48 max-h-48 before:content-[''] before:w-full before:h-full before:rounded-lg before:absolute before:inset-0 before:bg-white/40 before:z-10 p-4">
+                                <h1
+                                    class="text-2xl font-bold bg-blue-800 text-white absolute top-0 left-8 -translate-y-1/3 z-10 w-12 h-12 flex items-center justify-center rounded-full">
+                                    02
+                                </h1>
+                                <div
+                                    class="px-4 py-3.5 rounded-lg relative shadow-[0px_0px_8px] shadow-indigo-500/40 w-full h-full bg-white overflow-hidden before:content-[''] before:absolute before:inset-0 before:bg-[url('../assets/img/img-02.png')] before:opacity-20 before:blur-sm">
+                                    <div class="relative z-10 text-center">
+                                        <h5 class="text-lg font-bold text-blue-800 text-center mb-1">Select a Task
+                                        </h5>
+                                        <p class="text-sm text-slate-500 font-medium text-center mb-4">Play games or do
+                                            surveys</p>
+                                        <div
+                                            class="inline-flex bg-blue-800 text-white px-8 py-2 rounded text-xs font-medium uppercase shadow-inner relative">
+                                            <img src="./assets/img/hand.png" alt=""
+                                                class="absolute top-2 w-12 right-0  -rotate-45">
+                                            Earn
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="2xl:basis-1/3 md:basis-1/2 basis-full mt-2 mb-6 px-2">
+                            <div
+                                class="relative rounded-lg w-full 2xl:h-full h-48 max-h-48 before:content-[''] before:w-full before:h-full before:rounded-lg before:absolute before:inset-0 before:bg-white/40 before:z-10 p-4">
+                                <h1
+                                    class="text-2xl font-bold bg-blue-800 text-white absolute top-0 left-8 -translate-y-1/3 z-10 w-12 h-12 flex items-center justify-center rounded-full">
+                                    03
+                                </h1>
+                                <div
+                                    class="px-4 py-3.5 rounded-lg relative shadow-[0px_0px_8px] shadow-indigo-500/40 w-full h-full bg-white overflow-hidden before:content-[''] before:absolute before:inset-0 before:bg-[url('../assets/img/blog-2.jpg')] before:opacity-20 before:blur-sm">
+                                    <div class="relative z-10 text-center">
+                                        <h5 class="text-lg font-bold text-blue-800 text-center mb-1">Receive reward
+                                        </h5>
+                                        <p class="text-sm text-slate-500 font-medium text-center mb-4">Cashout in Paypal
+                                            or
+                                            GiftCards</p>
+                                        <div
+                                            class="inline-flex bg-blue-800 text-white px-8 py-2 rounded text-xs font-medium uppercase shadow-inner relative">
+                                            <img src="./assets/img/hand.png" alt=""
+                                                class="absolute top-2 w-12 right-0  -rotate-45">
+                                            Withdraw
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <a href="#"
+                            class="inline-block bg-blue-800 text-white hover:bg-blue-900 text-center align-middle py-2.5 px-8 rounded-md items-center text-base max-w-xs w-full">Earn
+                            now!</a>
+                    </div>
+                </div>
+                <!-- How It works section ends-->
+
+                <!-- Withdraw section starts-->
+                <div class="lg:w-2/3 w-full mx-auto">
+                    <div class="py-6">
+                        <h4 class="text-2xl font-medium text-center">Huge Withdraw Selection</h4>
+                    </div>
+                    <div>
+                        <p class="text-xl text-center text-neutral-500">Earn coins and withdraw as little as $0.50 at a
+                            time!</p>
+                    </div>
+                    <div class="flex flex-wrap -mx-2">
+                        <div class="md:basis-1/2 basis-full my-4 px-2">
+                            <div class="relative flex px-4 py-12 flex-col rounded-xl bg-white text-center break-words">
+                                <img src="assets/img/w-1.png" style="width: 60px; height: 90px" class="mx-auto">
+                                <h6 class="py-4">Cashouts starting at $0.01</h6>
+                            </div>
+                        </div>
+                        <div class="md:basis-1/2 basis-full my-4 px-2">
+                            <div class="relative flex px-4 py-12 flex-col rounded-xl bg-white text-center break-words">
+                                <img src="assets/img/w-2.png" style="width: 100px; height: 90px" class="mx-auto">
+                                <h6 class="py-4">Earn $1.00 every 5-10 minutes by completing offers on
+                                    Monetars.</h6>
+                            </div>
+                        </div>
+                        <div class="basis-1/2 my-4 px-2 max-h-32 h-full">
+                            <div
+                                class="relative flex px-4 py-6 flex-col rounded-xl bg-white text-center break-words h-full">
+                                <img src="assets/img/w-6.png" class="mx-auto">
+                                <h6 class="text-sm sm:text-base pt-4">24/7 Support</h6>
+                            </div>
+                        </div>
+                        <div class="basis-1/2 my-4 px-2 max-h-32 h-full">
+                            <div
+                                class="relative flex px-4 py-6 flex-col rounded-xl bg-white text-center break-words h-full">
+                                <svg class="w-9 text-blue-800 mx-auto" viewBox="0 0 36 36" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_16_10)">
+                                        <path
+                                            d="M32 8H4C3.46957 8 2.96086 8.21071 2.58579 8.58579C2.21071 8.96086 2 9.46957 2 10V26C2 26.5304 2.21071 27.0391 2.58579 27.4142C2.96086 27.7893 3.46957 28 4 28H32C32.5304 28 33.0391 27.7893 33.4142 27.4142C33.7893 27.0391 34 26.5304 34 26V10C34 9.46957 33.7893 8.96086 33.4142 8.58579C33.0391 8.21071 32.5304 8 32 8V8ZM4 26V21.15C5.25008 21.242 6.42439 21.7842 7.30519 22.6761C8.18599 23.5679 8.71353 24.7489 8.79 26H4ZM4 14.85V10H8.79C8.71353 11.2511 8.18599 12.4321 7.30519 13.3239C6.42439 14.2158 5.25008 14.758 4 14.85V14.85ZM18 25.15C14.53 25.15 11.7 21.94 11.7 18C11.7 14.06 14.53 10.85 18 10.85C21.47 10.85 24.3 14.06 24.3 18C24.3 21.94 21.47 25.15 18 25.15ZM32 26H27.25C27.3253 24.7552 27.8472 23.5794 28.7198 22.6884C29.5923 21.7975 30.7571 21.2512 32 21.15V26ZM32 14.85C30.7571 14.7488 29.5923 14.2025 28.7198 13.3116C27.8472 12.4206 27.3253 11.2448 27.25 10H32V14.85Z"
+                                            fill="currentColor" />
+                                        <path
+                                            d="M18 22.72C20.2091 22.72 22 20.6068 22 18C22 15.3932 20.2091 13.28 18 13.28C15.7909 13.28 14 15.3932 14 18C14 20.6068 15.7909 22.72 18 22.72Z"
+                                            fill="currentColor" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_16_10">
+                                            <rect width="36" height="36" fill="white" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+
+                                <h6 class="text-sm sm:text-base pt-4">Instant Cashouts</h6>
+                            </div>
+                        </div>
+                        <div class="basis-1/2 my-4 px-2 max-h-32 h-full">
+                            <div
+                                class="relative flex px-4 py-6 flex-col rounded-xl bg-white text-center break-words h-full">
+                                <img src="assets/img/w-4.png" class="mx-auto">
+                                <h6 class="text-sm sm:text-base pt-4"> High Payrate</h6>
+                            </div>
+                        </div>
+                        <div class="basis-1/2 my-4 px-2 max-h-32 h-full">
+                            <div
+                                class="relative flex px-4 py-6 flex-col rounded-xl bg-white text-center break-words h-full">
+                                <svg class="w-10 mx-auto text-blue-800" viewBox="0 0 576 512" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_17_14)">
+                                        <path
+                                            d="M552 64H448V24C448 10.7 437.3 0 424 0H152C138.7 0 128 10.7 128 24V64H24C10.7 64 0 74.7 0 88V144C0 179.7 22.5 216.4 61.9 244.7C93.4 267.4 131.7 281.8 171.9 286.4C203.3 338.5 240 360 240 360V432H192C156.7 432 128 452.7 128 488V500C128 506.6 133.4 512 140 512H436C442.6 512 448 506.6 448 500V488C448 452.7 419.3 432 384 432H336V360C336 360 372.7 338.5 404.1 286.4C444.4 281.8 482.7 267.4 514.1 244.7C553.4 216.4 576 179.7 576 144V88C576 74.7 565.3 64 552 64ZM99.3 192.8C74.9 175.2 64 155.6 64 144V128H128.2C129.2 160.6 134 189.2 141 214.2C125.9 209 111.8 201.8 99.3 192.8V192.8ZM512 144C512 160.1 494.3 180.1 476.7 192.8C464.2 201.8 450 209 434.9 214.2C441.9 189.2 446.7 160.6 447.7 128H512V144Z"
+                                            fill="currentColor" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_17_14">
+                                            <rect width="576" height="512" fill="white" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+
+                                <h6 class="text-sm sm:text-base pt-4">Daily Leaderbord</h6>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- Withdraw section ends-->
+
+
+                <!-- FAQ Section Start -->
+                <div class="lg:w-2/3 w-full mx-auto">
+                    <div class="py-4">
+                        <h4 class="text-2xl font-medium text-center">FAQ</h4>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-x-6 gap-y-4">
+                        <div class="space-y-4">
+                            <div class="bg-white shadow-md rounded-md px-6 py-3" x-data="{open : false}">
+                                <div class="flex items-center space-x-4 cursor-pointer" @click="open = !open">
+                                    <span
+                                        class="flex shrink-0 justify-center items-center w-8 h-8 rounded bg-blue-800 text-white"><svg
+                                            class="w-4" :class="open ? 'rotate-180' : ''" viewBox="0 0 384 512">
+                                            <path fill="currentColor"
+                                                d="M378.8 309.8l-176 165.9C199.7 478.6 195.9 480 192 480s-7.719-1.426-10.77-4.31l-176-165.9C-1.297 303.6-1.781 293.1 4.156 286.3c5.953-6.838 16.09-7.259 22.61-1.134L176 425.9V48.59c0-9.171 7.156-16.59 15.1-16.59S208 39.42 208 48.59v377.3l149.2-140.7c6.516-6.125 16.66-5.704 22.61 1.134C385.8 293.1 385.3 303.6 378.8 309.8z">
+                                            </path>
+                                        </svg></span>
+                                    <h5 class="text-base text-neutral-800">How does Monetars work? </h5>
+                                </div>
+                                <div class="pt-3" x-show="open">
+                                    <p class="text-base text-gray-500">Monetars works with various game publishers,
+                                        survey
+                                        providers and websites.
+                                        Manufacturers and providers pay Monetars for Monetars members to test the
+                                        websites/games.</p>
+                                </div>
+                            </div>
+
+                            <div class="bg-white shadow-md rounded-md px-6 py-3" x-data="{open : false}">
+                                <div class="flex items-center space-x-4 cursor-pointer" @click="open = !open">
+                                    <span
+                                        class="flex shrink-0 justify-center items-center w-8 h-8 rounded bg-blue-800 text-white"><svg
+                                            class="w-4" :class="open ? 'rotate-180' : ''" viewBox="0 0 384 512">
+                                            <path fill="currentColor"
+                                                d="M378.8 309.8l-176 165.9C199.7 478.6 195.9 480 192 480s-7.719-1.426-10.77-4.31l-176-165.9C-1.297 303.6-1.781 293.1 4.156 286.3c5.953-6.838 16.09-7.259 22.61-1.134L176 425.9V48.59c0-9.171 7.156-16.59 15.1-16.59S208 39.42 208 48.59v377.3l149.2-140.7c6.516-6.125 16.66-5.704 22.61 1.134C385.8 293.1 385.3 303.6 378.8 309.8z">
+                                            </path>
+                                        </svg></span>
+                                    <h5 class="text-base text-neutral-800">How much money can I earn on
+                                        Monetars?</h5>
+                                </div>
+                                <div class="pt-3" x-show="open">
+                                    <p class="text-base text-gray-500">There is no limit to how much you can earn.
+                                        We
+                                        have
+                                        a variety of ways to earn money with us. Some of our members earn hundreds of
+                                        dollars a month.</p>
+                                </div>
+                            </div>
+
+                            <div class="bg-white shadow-md rounded-md px-6 py-3" x-data="{open : false}">
+                                <div class="flex items-center space-x-4 cursor-pointer" @click="open = !open">
+                                    <span
+                                        class="flex shrink-0 justify-center items-center w-8 h-8 rounded bg-blue-800 text-white"><svg
+                                            class="w-4" :class="open ? 'rotate-180' : ''" viewBox="0 0 384 512">
+                                            <path fill="currentColor"
+                                                d="M378.8 309.8l-176 165.9C199.7 478.6 195.9 480 192 480s-7.719-1.426-10.77-4.31l-176-165.9C-1.297 303.6-1.781 293.1 4.156 286.3c5.953-6.838 16.09-7.259 22.61-1.134L176 425.9V48.59c0-9.171 7.156-16.59 15.1-16.59S208 39.42 208 48.59v377.3l149.2-140.7c6.516-6.125 16.66-5.704 22.61 1.134C385.8 293.1 385.3 303.6 378.8 309.8z">
+                                            </path>
+                                        </svg></span>
+                                    <h5 class="text-base text-neutral-800">How long does a task take?</h5>
+                                </div>
+                                <div class="pt-3" x-show="open">
+                                    <p class="text-base text-gray-500">The duration of assignments can vary
+                                        depending on
+                                        the scope and payment. As a rule, the longer a job takes, the higher the
+                                        payment.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div class="bg-white shadow-md rounded-md px-6 py-3" x-data="{open : false}">
+                                <div class="flex items-center space-x-4 cursor-pointer" @click="open = !open">
+                                    <span
+                                        class="flex shrink-0 justify-center items-center w-8 h-8 rounded bg-blue-800 text-white"><svg
+                                            class="w-4" :class="open ? 'rotate-180' : ''" viewBox="0 0 384 512">
+                                            <path fill="currentColor"
+                                                d="M378.8 309.8l-176 165.9C199.7 478.6 195.9 480 192 480s-7.719-1.426-10.77-4.31l-176-165.9C-1.297 303.6-1.781 293.1 4.156 286.3c5.953-6.838 16.09-7.259 22.61-1.134L176 425.9V48.59c0-9.171 7.156-16.59 15.1-16.59S208 39.42 208 48.59v377.3l149.2-140.7c6.516-6.125 16.66-5.704 22.61 1.134C385.8 293.1 385.3 303.6 378.8 309.8z">
+                                            </path>
+                                        </svg></span>
+                                    <h5 class="text-base text-neutral-800">When can I make my first
+                                        withdrawal?</h5>
+                                </div>
+                                <div class="pt-3" x-show="open">
+                                    <p class="text-base text-gray-500">The smallest withdrawal is 5000 coins. This
+                                        corresponds to a value of 5,00$.
+                                        You can withdraw your coins as Paypal/ Visa credits or in various vouchers.</p>
+                                </div>
+                            </div>
+                            <div class="bg-white shadow-md rounded-md px-6 py-3" x-data="{open : false}">
+                                <div class="flex items-center space-x-4 cursor-pointer" @click="open = !open">
+                                    <span
+                                        class="flex shrink-0 justify-center items-center w-8 h-8 rounded bg-blue-800 text-white"><svg
+                                            class="w-4" :class="open ? 'rotate-180' : ''" viewBox="0 0 384 512">
+                                            <path fill="currentColor"
+                                                d="M378.8 309.8l-176 165.9C199.7 478.6 195.9 480 192 480s-7.719-1.426-10.77-4.31l-176-165.9C-1.297 303.6-1.781 293.1 4.156 286.3c5.953-6.838 16.09-7.259 22.61-1.134L176 425.9V48.59c0-9.171 7.156-16.59 15.1-16.59S208 39.42 208 48.59v377.3l149.2-140.7c6.516-6.125 16.66-5.704 22.61 1.134C385.8 293.1 385.3 303.6 378.8 309.8z">
+                                            </path>
+                                        </svg></span>
+                                    <h5 class="text-base text-neutral-800">When will I receive my payout?
+                                    </h5>
+                                </div>
+                                <div class="pt-3" x-show="open">
+                                    <p class="text-base text-gray-500">Payouts are usually processed within a few
+                                        minutes
+                                        to a few hours.
+                                        This means that you will receive your money on the same day.</p>
+                                </div>
+                            </div>
+
+                            <div class="bg-white shadow-md rounded-md px-6 py-3" x-data="{open : false}">
+                                <div class="flex items-center space-x-4 cursor-pointer" @click="open = !open">
+                                    <span
+                                        class="flex shrink-0 justify-center items-center w-8 h-8 rounded bg-blue-800 text-white"><svg
+                                            class="w-4" :class="open ? 'rotate-180' : ''" viewBox="0 0 384 512">
+                                            <path fill="currentColor"
+                                                d="M378.8 309.8l-176 165.9C199.7 478.6 195.9 480 192 480s-7.719-1.426-10.77-4.31l-176-165.9C-1.297 303.6-1.781 293.1 4.156 286.3c5.953-6.838 16.09-7.259 22.61-1.134L176 425.9V48.59c0-9.171 7.156-16.59 15.1-16.59S208 39.42 208 48.59v377.3l149.2-140.7c6.516-6.125 16.66-5.704 22.61 1.134C385.8 293.1 385.3 303.6 378.8 309.8z">
+                                            </path>
+                                        </svg></span>
+                                    <h5 class="text-base text-neutral-800">Can I also complete tasks using
+                                        my smartphone?
+                                    </h5>
+                                </div>
+                                <div class="pt-3" x-show="open">
+                                    <p class="text-base text-gray-500">Monetars also offers a variety of mobile
+                                        tasks,
+                                        so you can test games or participate in surveys on the go.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- FAQ Section End -->
+
+
+                <!-- Client Section Start -->
+                <div class="lg:w-2/3 w-full mx-auto my-8">
+                    <div class="py-4">
+                        <h4 class="text-2xl font-medium text-center">Are you Ready? These Rewards are waiting for you:
+                        </h4>
+                    </div>
+
+                    <div class="flex items-center justify-center flex-wrap mb-5">
+                        <div class="w-36 h-12 rounded-md flex items-center justify-center bg-white shadow-sm m-2 px-2">
+                            <img src="./assets/img/paypalLogo.png" alt="" class="h-6">
+                        </div>
+                        <div class="w-36 h-12 rounded-md flex items-center justify-center bg-white shadow-sm m-2 px-2">
+                            <img src="./assets/img/visa.webp" alt="" class="h-6">
+                        </div>
+                        <div class="w-36 h-12 rounded-md flex items-center justify-center bg-white shadow-sm m-2 px-2">
+                            <img src="./assets/img/amazone.png" alt="" class="h-6">
+                        </div>
+                        <div class="w-36 h-12 rounded-md flex items-center justify-center bg-white shadow-sm m-2 px-2">
+                            <img src="./assets/img/Spotify Logo (PNG480p) - Vector69Com.png" alt="" class="h-6">
+                        </div>
+                        <div class="w-36 h-12 rounded-md flex items-center justify-center bg-white shadow-sm m-2 px-2">
+                            <img src="./assets/img/zalandoShopLogo.png" alt="" class="h-6">
+                        </div>
+                        <div class="w-36 h-12 rounded-md flex items-center justify-center bg-white shadow-sm m-2 px-2">
+                            <img src="./assets/img/Group 504.png" alt="" class="h-6">
+                        </div>
+                    </div>
+                    <p class="text-center text-lg text-neutral-500 mb-3">+10 awesome withdraw options</p>
+                    <div class="text-center">
+                        <button class="px-3 py-3 h-12 bg-blue-800 max-w-xs w-full text-center text-white block mx-auto">
+                            Start
+                            Earning
+                        </button>
+                    </div>
+                </div>
+                <!-- Client Section End -->
+            </div>
+            <!--Main Section Ends-->
+
+            <!--Footer Starts-->
+            <footer class="absolute w-full bottom-0 h-10">
+                <div class="footer-section px-2 py-12" style="width: 100%;">
+                    <div class="lg:w-2/3 w-full mx-auto">
+                        <div class="text-center mb-6">
+                            <a href="index.html"><img src="assets/img/Monester-logo.png" class="mb-2" alt="Monster Logo"
+                                    style="width:210px; height: 50px"></a>
+                        </div>
+                        <div class="flex flex-wrap">
+                            <div class="basis-1/3 mt-2 px-2">
+                                <p class="text-lg text-neutral-500">Monetars is a project where<br>
+                                    online testers have the<br>
+                                    opportunity to complete various<br>
+                                    online assignments and receive<br>
+                                    money for it.</p>
+                                <div class="flex justify-start mt-4">
+                                    <span class="w-10 h-10 mr-2"><a
+                                            class="flex justify-center items-center w-full h-full rounded-full bg-neutral-500 hover:bg-black"
+                                            href="#"><i class="fab fa-facebook-f text-white text-xl"></i></a></span>
+                                    <span class="w-10 h-10 mr-2"><a
+                                            class="flex justify-center items-center w-full h-full rounded-full bg-neutral-500 hover:bg-black"
+                                            href="#"><i class="fab fa-instagram text-white text-xl"></i></a></span>
+                                    <span class="w-10 h-10 mr-2"><a
+                                            class="flex justify-center items-center w-full h-full rounded-full bg-neutral-500 hover:bg-black"
+                                            href="#"><i class="fab fa-twitter text-white text-xl"></i></a></span>
+                                    <span class="w-10 h-10 mr-2"><a
+                                            class="flex justify-center items-center w-full h-full rounded-full bg-neutral-500 hover:bg-black"
+                                            href="#"><i class="fab fa-discord text-white text-xl"></i></a></span>
+                                    <span class="w-10 h-10 mr-2"><a
+                                            class="flex justify-center items-center w-full h-full rounded-full bg-neutral-500 hover:bg-black"
+                                            href="#"><i class="fal fa-robot text-white text-xl"></i></a></span>
+                                </div>
+                            </div>
+                            <div class="basis-2/3 mt-2 px-2">
+                                <div class="flex flex-wrap">
+                                    <div class="md:basis-1/3 basis-full">
+                                        <h5 class="text-xl mb-3 font-medium">Account</h5>
+                                        <ul>
+                                            <li class="mb-2">
+                                                <a onclick="blockToggle(logModal)"
+                                                    class="text-neutral-500 hover:text-black"
+                                                    href="#login-modal">Login</a>
+                                            </li>
+                                            <li class="mb-2">
+                                                <a onclick="blockToggle(registerModal)"
+                                                    class="text-neutral-500 hover:text-black"
+                                                    href="#register-modal">Register</a>
+                                            </li>
+                                            <li class="mb-2">
+                                                <a class="text-neutral-500 hover:text-black" href="faq.html">FAQ</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="md:basis-1/3 basis-full">
+                                        <h5 class="text-xl mb-3 font-medium">Company</h5>
+                                        <ul>
+                                            <li class="mb-2">
+                                                <a class="text-neutral-500 hover:text-black" href="about.html">About
+                                                    us</a>
+                                            </li>
+                                            <li class="mb-2">
+                                                <a class="text-neutral-500 hover:text-black" href="blogs.html">Blog</a>
+                                            </li>
+                                            <li class="mb-2">
+                                                <a class="text-neutral-500 hover:text-black"
+                                                    href="contact.html">Contact</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="md:basis-1/3 basis-full">
+                                        <h5 class="text-xl mb-3 font-medium">Legal</h5>
+                                        <ul>
+                                            <li class="mb-2">
+                                                <a class="text-neutral-500 hover:text-black"
+                                                    href="privacy.html">Privacy</a>
+                                            </li>
+                                            <li class="mb-2">
+                                                <a class="text-neutral-500 hover:text-black" href="terms.html">Terms and
+                                                    Conditions</a>
+                                            </li>
+                                            <li class="mb-2">
+                                                <a class="text-neutral-500 hover:text-black"
+                                                    href="imprint.html">Imprint</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-section px-2 pt-6 md:pb-6 pb-24 bg-indigo-50" style="width: 100%;">
+                    <div class="lg:w-2/3 w-full mx-auto">
+                        <div class="flex flex-wrap">
+                            <div class="md:basis-1/2 basis-full px-2 mt-2 md:text-start text-center">
+                                <p class="text-neutral-500">Monetars.com | All rights reserved</p>
+                            </div>
+                            <div class="md:basis-1/2 basis-full px-2 mt-2 md:text-end text-center">
+                                <p class="text-neutral-500">&copy; Copyright 2020 - 2022</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!--Footer Ends-->
+        </div>
+
+        <!-- Profile Sidebar Starts -->
+        <div class="bg-indigo-50 hidden w-[320px]" id="profileSidebar">
+            <!--SideBox Starts -->
+            <div
+                class="fixed right-0 md:top-36 top-32 md:w-[300px] w-full md:h-auto h-[68vh] rounded-bl-md rounded-tl-md z-40 shadow-md bg-white">
+                <div class="relative w-full h-full bg-transparent">
+                    <span onclick="blockToggle(profileSidebar); footerSink()"
+                        class="absolute md:flex hidden -left-9 top-0 w-9 h-9 bg-blue-800 rounded-bl-xl rounded-tl-xl justify-center items-center cursor-pointer"
+                        id="btn-close"><i class="fal fa-arrow-right text-xs text-white font-bold"></i></span>
+                    <!-- 
+                          <span class="absolute -left-9 top-0 w-9 h-9 bg-blue-800 rounded-bl-md rounded-tl-md flex justify-center items-center" id="btn-close"><i class="fal fa-arflex flex-wrap-right hidden  text-white font-bold"></i></span>
+                           -->
+                    <div class="bg-indigo-200 text-center w-full h-11 flex justify-center items-center px-6">
+                        <div class="bg-white rounded-full flex justify-center d-flex justify-content-between w-full">
+                            <div class="w-1/2">
+                                <div class="relative">
+                                    <button onclick="accordionToggle(this, dropdownMenu7); blockToggle(dropdownMenu5)"
+                                        role="button"
+                                        class="bg-blue-800 text-white border text-center align-middle py-2  px-3 rounded-full flex items-center text-base">
+                                        <i class="fal fa-globe"></i>
+                                        <span class="mx-2">General</span>
+                                        <i class="fal fa-chevron-down ms-2"></i>
+                                    </button>
+                                    <ul id="dropdownMenu5"
+                                        class="absolute hidden z-50 w-40 p-2 text-base text-left text-neutral-500 bg-white rounded-md translate-y-0 shadow-md">
+                                        <li><a class="text-gray-500 text-xs block w-full py-1 px-4 whitespace-nowrap bg-white hover:bg-blue-800 hover:text-white"
+                                                href="#">
+                                                <i class="fal fa-globe text-sm"></i><span class="ml-2">General
+                                                    (70)</span>
+                                            </a></li>
+                                        <li><a class="text-gray-500 text-xs block w-full py-1 px-4 whitespace-nowrap bg-white hover:bg-blue-800 hover:text-white"
+                                                href=" #">
+                                                <i class="fal fa-star text-sm"></i><span class="ml-2">VIP
+                                                    (704)</span>
+                                            </a></li>
+                                        <li><a class="text-gray-500 text-xs w-full flex items-cente py-1 px-4 font-normal whitespace-nowrap bg-white hover:bg-blue-800 hover:text-white"
+                                                href="#">
+                                                <img src="assets/img/germany.png"><span
+                                                    class="ml-2 inline-block">Germany
+                                                    (102)</span>
+                                            </a></li>
+                                        <li><a class="text-gray-500 text-xs w-full py-1 px-4 font-nowrap bg-white hover:bg-blue-800 hover:text-white flex items-center"
+                                                href="#">
+                                                <img src="assets/img/spain.png"><span class="ml-2">Spain
+                                                    (92)</span>
+                                            </a></li>
+                                        <li><a class="text-gray-500 text-xs w-full py-1 px-4 font-nowrap bg-white hover:bg-blue-800 hover:text-white flex items-center"
+                                                href="#">
+                                                <img src="assets/img/france.png"><span class="ml-2">France
+                                                    (74)</span>
+                                            </a></li>
+                                        <li><a class="text-gray-500 text-xs w-full py-1 px-4 font-nowrap bg-white hover:bg-blue-800 hover:text-white flex items-center"
+                                                href="#">
+                                                <img src="assets/img/italy.png"><span class="ml-2">Italy
+                                                    (27)</span>
+                                            </a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="w-1/2">
+                                <a onclick="accordionToggle(this, dropdownMenu6)" role="button"
+                                    class="bg-white text-neutral-500 text-center align-middle py-2  px-8 rounded-3xl flex items-center text-base cursor-pointer">Support</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-4 pl-4 pb-12 pr-4 hidden" style="height: calc(100vh - 190px);" role="TabContent"
+                        id="dropdownMenu6">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-base">@MonetarsUpoort</span>
+                            <span class="text-sm">09:23PM</span>
+                        </div>
+                        <div class="mb-2">
+                            <p class="text-gray-500 text-sm">Send us a support message at any time and we'll
+                                get back to you as soon as
+                                possible!</p>
+                        </div>
+                        <div>
+                            <p class="text-gray-500 text-sm">Tip: If you are missing coins, please check the
+                                FAQ section before contacting
+                                support.</p>
+                        </div>
+                    </div>
+                    <div class="w-full p-2 overflow-y-scroll bg-white" style="height: calc(100vh - 190px);"
+                        id="dropdownMenu7" role="TabContent">
+                        <div class="p-2 flex justify-between">
+                            <div>
+                                <div class="flex justify-start items-center">
+                                    <div>
+                                        <span>
+                                            <a href="#user-modal">
+                                                <img src="assets/img/Ellipse 53.png"
+                                                    class="w-12 h-12 rounded-full object-cover object-top shadow-md">
+                                            </a>
+                                        </span>
+                                    </div>
+                                    <div class="pl-3">
+                                        <span class="p-0 block text-base">John</span>
+                                        <span class="text-sm block">Lorem ipsum dolor sit.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <span class="text-sm block">09:23</span>
+                            </div>
+                        </div>
+                        <div class="p-2 flex justify-between">
+                            <div>
+                                <div class="flex justify-start items-center">
+                                    <div>
+                                        <span>
+                                            <a href="#user-modal">
+                                                <img src="assets/img/Ellipse 53.png"
+                                                    class="w-12 h-12 rounded-full object-cover object-top shadow-md">
+                                            </a>
+                                        </span>
+                                    </div>
+                                    <div class="pl-3">
+                                        <span class="p-0 block text-base">John</span>
+                                        <span class="text-sm block">Lorem ipsum dolor sit.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <span class="text-sm block">09:23</span>
+                            </div>
+                        </div>
+                        <div class="p-2 flex justify-between">
+                            <div>
+                                <div class="flex justify-start items-center">
+                                    <div>
+                                        <span>
+                                            <a href="#user-modal">
+                                                <img src="assets/img/Ellipse 53.png"
+                                                    class="w-12 h-12 rounded-full object-cover object-top shadow-md">
+                                            </a>
+                                        </span>
+                                    </div>
+                                    <div class="pl-3">
+                                        <span class="p-0 block text-base">John</span>
+                                        <span class="text-sm block">Lorem ipsum dolor sit.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <span class="text-sm block">09:23</span>
+                            </div>
+                        </div>
+                        <div class="p-2 flex justify-between">
+                            <div>
+                                <div class="flex justify-start items-center">
+                                    <div>
+                                        <span>
+                                            <a href="#user-modal">
+                                                <img src="assets/img/Ellipse 53.png"
+                                                    class="w-12 h-12 rounded-full object-cover object-top shadow-md">
+                                            </a>
+                                        </span>
+                                    </div>
+                                    <div class="pl-3">
+                                        <span class="p-0 block text-base">John</span>
+                                        <span class="text-sm block">Lorem ipsum dolor sit.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <span class="text-sm block">09:23</span>
+                            </div>
+                        </div>
+                        <div class="p-2 flex justify-between">
+                            <div>
+                                <div class="flex justify-start items-center">
+                                    <div>
+                                        <span>
+                                            <a href="#user-modal">
+                                                <img src="assets/img/Ellipse 53.png"
+                                                    class="w-12 h-12 rounded-full object-cover object-top shadow-md">
+                                            </a>
+                                        </span>
+                                    </div>
+                                    <div class="pl-3">
+                                        <span class="p-0 block text-base">John</span>
+                                        <span class="text-sm block">Lorem ipsum dolor sit.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <span class="text-sm block">09:23</span>
+                            </div>
+                        </div>
+                        <div class="p-2 flex justify-between">
+                            <div>
+                                <div class="flex justify-start items-center">
+                                    <div>
+                                        <span>
+                                            <a href="#user-modal">
+                                                <img src="assets/img/Ellipse 53.png"
+                                                    class="w-12 h-12 rounded-full object-cover object-top shadow-md">
+                                            </a>
+                                        </span>
+                                    </div>
+                                    <div class="pl-3">
+                                        <span class="p-0 block text-base">John</span>
+                                        <span class="text-sm block">Lorem ipsum dolor sit.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <span class="text-sm block">09:23</span>
+                            </div>
+                        </div>
+                        <div class="p-2 flex justify-between">
+                            <div>
+                                <div class="flex justify-start items-center">
+                                    <div>
+                                        <span>
+                                            <a href="#user-modal">
+                                                <img src="assets/img/Ellipse 53.png"
+                                                    class="w-12 h-12 rounded-full object-cover object-top shadow-md">
+                                            </a>
+                                        </span>
+                                    </div>
+                                    <div class="pl-3">
+                                        <span class="p-0 block text-base">John</span>
+                                        <span class="text-sm block">Lorem ipsum dolor sit.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <span class="text-sm block">09:23</span>
+                            </div>
+                        </div>
+                        <div class="p-2 flex justify-between">
+                            <div>
+                                <div class="flex justify-start items-center">
+                                    <div>
+                                        <span>
+                                            <a href="#user-modal" data-bs-toggle="modal">
+                                                <img src="assets/img/Ellipse 53.png"
+                                                    class="w-12 h-12 rounded-full object-cover object-top shadow-md">
+                                            </a>
+                                        </span>
+                                    </div>
+                                    <div class="pl-3">
+                                        <span class="p-0 block text-base">John</span>
+                                        <span class="text-sm block">Lorem ipsum dolor sit.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <span class="text-sm block">09:23</span>
+                            </div>
+                        </div>
+                        <div class="p-2 flex justify-between">
+                            <div>
+                                <div class="flex justify-start items-center">
+                                    <div>
+                                        <span>
+                                            <a href="#user-modal" data-bs-toggle="modal">
+                                                <img src="assets/img/Ellipse 53.png"
+                                                    class="w-12 h-12 rounded-full object-cover object-top shadow-md">
+                                            </a>
+                                        </span>
+                                    </div>
+                                    <div class="pl-3">
+                                        <span class="p-0 block text-base">John</span>
+                                        <span class="text-sm block">Lorem ipsum dolor sit.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <span class="text-sm block">09:23</span>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="h-[55px] absolute md:bottom-0 -bottom-5 left-0 py-0 md:px-3 px-1 w-full bg-white">
+                        <form autocomplete="off">
+                            <div class="flex justify-between items-center bg-indigo-200 py-2 px-3 md:rounded-2xl">
+                                <input class="w-11/12 border-0 text-black py-1 px-2 bg-transparent font-sm" type="text"
+                                    placeholder="Say Something...">
+                                <span class="w-[9%] bg-transparent flex justify-center items-center text-base"><i
+                                        class="fal fa-smile"></i></span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!--SideBox Ends -->
+        </div>
+        <!-- Profile Sidebar Ends -->
+
+    </div>
+    <!-- Sections Ends -->
+
+    <!-- Canvas Starts -->
+    <div id="sidebarMenu1" class="fixed hidden flex-col bottom-0 top-0 left-0 w-80 visible bg-white z-50">
+        <div class="flex justify-between items-center p-4">
+            <div>
+                <a class="mr-4 text-xl whitespace-nowrap" href="index.html">
+                    <img src="assets/img/Monester-Logo.png" alt="Monster Logo" style="width:200px; height: 50px">
+                </a>
+            </div>
+            <button onclick="flexToggle(sidebarMenu1)" class="p-2 -mt-2 -ml-2 -mr-2"><i
+                    class="text-xl text-neutral-500 fas fa-times"></i></button>
+        </div>
+        <div class="relative grow p-4 overflow-y-auto">
+            <div class="w-full py-1 bg-white ">
+                <!-- when user logged-in -->
+                <ul class="flex flex-col mx-auto mb-2">
+                    <li class="nav-item">
+                        <a class="block py-2 px-3 text-neutral-500 hover:text-blue-800" href="profile.html">
+                            <i class="fal fa-user-alt px-2"></i>Profile
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="block py-2 px-3 text-neutral-500 hover:text-blue-800" aria-current="page"
+                            href="earn.html">
+                            <i class="fal fa-dollar-sign px-2"></i>Earn
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="block py-2 px-3 text-neutral-500 hover:text-blue-800" href="withdraw.html">
+                            <i class="fal fa-credit-card-front px-2"></i>Withdraw
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="block py-2 px-3 text-neutral-500 hover:text-blue-800" href="leaders.html">
+                            <i class="fal fa-star px-2"></i>Leaders
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a onclick="blockToggle(promoModal)"
+                            class="block py-2 px-3 text-neutral-500 hover:text-blue-800" href="javascript:void(0);">
+                            <i class="fal fa-gift px-2"></i>Promo
+                        </a>
+                    </li>
+                </ul>
+                <div class="absolute bottoleft-0 py-2 pl-1">
+                    <a class="inline-block py-1 px-3 text-base rounded-md bg-blue-800 text-white" href="#">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Canvas Ends -->
+
+    <!-- Mobile Nav Starts-->
+    <div class="fixed md:hidden block bottom-0 left-0 p-1 w-screen h-20 bg-indigo-200 z-50">
+        <div>
+            <ul class="flex justify-between bg-indigo-200">
+                <li class="w-1/5 py-2 mx-1 text-center rounded"><a class="text-sm text-neutral-500"
+                        href="earn.html"><span class="block text-center"><i
+                                class="fal fa-hands-usd text-base text-neutral-500"></i></span>Earn</a></li>
+                <li class="w-1/5 py-2 mx-1 text-center rounded"><a class="text-sm text-neutral-500"
+                        href="withdraw.html"><span class="block text-center"><i
+                                class="fal fa-credit-card-front text-base text-neutral-500"></i></span>Withdraw</a>
+                </li>
+                <li class="w-1/5 py-2 mx-1 text-center rounded"><a class="text-sm text-neutral-500"
+                        href="leaders.html"><span class="block text-center"><i
+                                class="fal fa-trophy text-base text-neutral-500"></i></span>Leaders</a></li>
+                <li class="w-1/5 py-2 mx-1 text-center rounded"><a class="text-sm text-neutral-500"
+                        onclick="blockToggle(profileSidebar); footerSink()" class="btn-mobile-open"><span
+                            class="block text-center"><i
+                                class="fal fa-comment-alt text-base text-neutral-500"></i></span>Chat</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Mobile Nav Ends-->
+
+    <!-- Login Modal Starts -->
+    <div class="fixed hidden top-0 left-0 z-50 w-full h-full overflow-x-hidden overflow-y-auto bg-[rgba(0,0,0,0.5)]"
+        id="logModal">
+        <div onclick="blockToggle(logModal)" class="overly fixed top-0 bottom-0 left-0 right-0 z-10"></div>
+        <div class="relative lg:w-[800px] md:w-[500px] w-full my-7 mx-auto z-50">
+            <div class="max-h-full overflow-hidden rounded-xl relative bg-white border border-[rgba(0,0,0,.2)]">
+                <div class="flex shrink-0 items-center justify-between p-4 rounded-tl-md rounded-tr-md">
+                    <button onclick="blockToggle(logModal)" class="p-2 -mt-2 -mr-2 -mb-2 ml-auto"><i
+                            class="text-xl text-neutral-500 fas fa-times"></i></button>
+                </div>
+                <div class="overflow-y-auto relative flex-1 p-1">
+                    <div class="w-full">
+                        <div class="flex flex-wrap py-4">
+                            <div class="md:basis-1/3 basis-full px-4 border-r border-neutral-200">
+                                <div class="flex flex-col justify-center items-center h-full">
+                                    <h4 class="font-bold mb-4 text-2xl">Welcome to</h4>
+                                    <img src="assets/img/Monester-logo.png" class="mx-auto" width="180px">
+                                </div>
+                            </div>
+                            <div class="md:basis-2/3 basis-full px-8">
+                                <div>
+                                    <div>
+                                        <form method="post" name="login-form" id="login-form" autocomplete="off">
+                                            <h3 class="font-bold text-3xl mb-6">Sign in</h3>
+                                            <div class="mb-4">
+                                                <label class="mb-1" for="email">Email Address</label>
+                                                <input type="email"
+                                                    class="block w-full py-1 px-3 text-base text-neutral-500 border border-indigo-50 rounded"
+                                                    id="email" name="email" required>
+                                            </div>
+                                            <div class="mb-6">
+                                                <label class="mb-1" for="password">Password</label>
+                                                <input type="password"
+                                                    class="block w-full py-1 px-3 text-base text-neutral-500 border border-indigo-50 rounded"
+                                                    id="password" name="password" required>
+                                            </div>
+                                            <div class="flex justify-start items-center mb-4">
+                                                <button class="text-white bg-blue-800 hover:bg-blue-900 py-1 px-3">Sign
+                                                    In</button>
+                                                <a onclick="blockToggle(resetModal); blockToggle(logModal)"
+                                                    class="text-neutral-500 ml-5 text-xs cursor-pointer">Reset
+                                                    Password</a>
+                                            </div>
+                                            <div class="mb-4">
+                                                <span class="block or">or</span>
+                                            </div>
+                                            <div class="flex justify-between items-center">
+                                                <a href="#"
+                                                    class=" w-full rounded-md bg-slate-50 text-black py-1 px-3 w-100 mr-2">
+                                                    <img src="assets/img/google.png"
+                                                        style="width: 50%; height: 25px; margin: 0 auto">
+                                                </a>
+                                                <a href="#"
+                                                    class=" w-full rounded-md bg-slate-50 text-black py-1 px-3 w-100">
+                                                    <img src="assets/img/steam.png"
+                                                        style="width: 50%; height: 25px; margin: 0 auto">
+                                                </a>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Login Modal Ends -->
+
+    <!-- Register Modal Starts -->
+    <div class="fixed hidden top-0 left-0 z-50 w-full h-full overflow-x-hidden overflow-y-auto bg-[rgba(0,0,0,0.5)]"
+        id="registerModal">
+        <div onclick="blockToggle(registerModal)" class="overly fixed top-0 bottom-0 left-0 right-0 z-10"></div>
+        <div class="relative lg:w-[800px] md:w-[500px] w-full my-7 mx-auto z-50">
+            <div class="max-h-full overflow-hidden rounded-xl relative bg-white border border-[rgba(0,0,0,.2)]">
+                <div class="flex shrink-0 items-center justify-between p-4 rounded-tl-md rounded-tr-md">
+                    <button onclick="blockToggle(registerModal)" class="p-2 -mt-2 -mr-2 -mb-2 ml-auto"><i
+                            class="text-xl text-neutral-500 fas fa-times"></i></button>
+                </div>
+                <div class="overflow-y-auto relative flex-1 p-1">
+                    <div class="w-full">
+                        <div class="flex flex-wrap py-4">
+                            <div class="md:basis-1/3 basis-full px-4 border-r border-neutral-200">
+                                <div class="flex flex-col justify-center items-center h-full">
+                                    <h4 class="font-bold mb-4 text-2xl">Welcome to</h4>
+                                    <img src="assets/img/Monester-logo.png" class="mx-auto" width="180px">
+                                </div>
+                            </div>
+                            <div class="md:basis-2/3 basis-full px-8">
+                                <div>
+                                    <form method="post" name="register-form" id="register-form" autocomplete="off">
+                                        <h3 class="font-bold text-3xl mb-6">Create your Account</h3>
+                                        <div class="mb-4">
+                                            <label class="mb-1" for="email">Email Address</label>
+                                            <input type="email"
+                                                class="block w-full py-1 px-3 text-base text-neutral-500 border border-indigo-50 rounded"
+                                                id="email" name="email" required>
+                                        </div>
+                                        <div class="mb-4">
+                                            <label class="mb-1" for="name">Username</label>
+                                            <input type="text"
+                                                class="block w-full py-1 px-3 text-base text-neutral-500 border border-indigo-50 rounded"
+                                                id="name" name="name" required>
+                                        </div>
+                                        <div class="mb-6">
+                                            <label class="mb-1" for="new_password">Password</label>
+                                            <input type="password"
+                                                class="block w-full py-1 px-3 text-base text-neutral-500 border border-indigo-50 rounded"
+                                                id="new_password" name="new_password" required>
+                                        </div>
+                                        <div class="mb-6">
+                                            <label class="mb-1" for="cpassword">Confirm Password</label>
+                                            <input type="password"
+                                                class="block w-full py-1 px-3 text-base text-neutral-500 border border-indigo-50 rounded"
+                                                id="cpassword" name="cpassword" required>
+                                        </div>
+                                        <div class="mb-6">
+                                            <input class="form-check-input" type="checkbox" required value="" id="terms"
+                                                name="terms">
+                                            <label class="form-check-label" for="terms">
+                                                <small class="text-sm">By signing up, you are agreeing t our <a
+                                                        class="text-blue-500 underline" href="#">Privacy Policy</a> and
+                                                    <a class="text-blue-500 underline" href="#">Term
+                                                        of Service.</a></small>
+                                            </label>
+                                            <label for="terms" id="terms-error" style="display: none;"
+                                                class="error"></label>
+                                        </div>
+                                        <div class="mb-4">
+                                            <button class="text-white bg-blue-800 hover:bg-blue-900 py-1 px-3">Sign
+                                                Up</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Register Modal Ends -->
+
+    <!-- Forgot Password Modal Starts -->
+    <div class="fixed hidden top-0 left-0 z-50 w-full h-full overflow-x-hidden overflow-y-auto bg-[rgba(0,0,0,0.5)]"
+        id="forgotModal">
+        <div onclick="blockToggle(forgotModal)" class="overly fixed top-0 bottom-0 left-0 right-0 z-10"></div>
+        <div class="relative lg:w-[800px] md:w-[500px] w-full my-7 mx-auto z-50">
+            <div class="max-h-full overflow-hidden rounded-xl relative bg-white border border-[rgba(0,0,0,.2)]">
+                <div class="flex shrink-0 items-center justify-between p-4 rounded-tl-md rounded-tr-md">
+                    <button onclick="blockToggle(forgotModal)" class="p-2 -mt-2 -mr-2 -mb-2 ml-auto"><i
+                            class="text-xl text-neutral-500 fas fa-times"></i></button>
+                </div>
+                <div class="overflow-y-auto relative flex-1 p-1">
+                    <div class="w-full">
+                        <div class="flex flex-wrap py-4">
+                            <div class="md:basis-1/3 basis-full px-4 border-r border-neutral-200">
+                                <div class="flex flex-col justify-center items-center h-full">
+                                    <h4 class="font-bold mb-4 text-2xl">Welcome to</h4>
+                                    <img src="assets/img/Monester-logo.png" class="mx-auto" width="180px">
+                                </div>
+                            </div>
+                            <div class="md:basis-2/3 basis-full px-8">
+                                <div>
+                                    <form method="post" name="login-form" id="forgot-form" autocomplete="off">
+                                        <h3 class="font-bold text-3xl mb-6">Recover Password</h3>
+                                        <div class="mb-4">
+                                            <label class="mb-1" for="email_address">Email Address</label>
+                                            <input type="email"
+                                                class="block w-full py-1 px-3 text-base text-neutral-500 border border-indigo-50 rounded"
+                                                id="email_address" name="email_address" required>
+                                        </div>
+                                        <div class="mb-4">
+                                            <button class="text-white bg-blue-800 hover:bg-blue-900 py-1 px-3">Recover
+                                                Password</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Forgot Password Modal Ends -->
+
+    <!-- Reset Password Modal Starts -->
+    <div class="fixed hidden top-0 left-0 z-50 w-full h-full overflow-x-hidden overflow-y-auto bg-[rgba(0,0,0,0.5)]"
+        id="resetModal">
+        <div onclick="blockToggle(resetModal)" class="overly fixed top-0 bottom-0 left-0 right-0 z-10"></div>
+        <div class="relative lg:w-[800px] md:w-[500px] w-full my-7 mx-auto z-50">
+            <div class="max-h-full overflow-hidden rounded-xl relative bg-white border border-[rgba(0,0,0,.2)]">
+                <div class="flex shrink-0 items-center justify-between p-4 rounded-tl-md rounded-tr-md">
+                    <button onclick="blockToggle(resetModal)" class="p-2 -mt-2 -mr-2 -mb-2 ml-auto"><i
+                            class="text-xl text-neutral-500 fas fa-times"></i></button>
+                </div>
+                <div class="overflow-y-auto relative flex-1 p-1">
+                    <div class="w-full">
+                        <div class="flex flex-wrap py-4">
+                            <div class="md:basis-1/3 basis-full px-4 border-r border-neutral-200">
+                                <div class="flex flex-col justify-center items-center h-full">
+                                    <h4 class="font-bold mb-4 text-2xl">Welcome to</h4>
+                                    <img src="assets/img/Monester-logo.png" class="mx-auto" width="180px">
+                                </div>
+                            </div>
+                            <div class="md:basis-2/3 basis-full px-8">
+                                <div>
+                                    <form method="post" name="register-form" id="reset-form" autocomplete="off">
+                                        <h3 class="font-bold text-3xl mb-6">Reset your Account Password</h3>
+                                        <div class="mb-6">
+                                            <label class="mb-1" for="new_password">Password</label>
+                                            <input type="password"
+                                                class="block w-full py-1 px-3 text-base text-neutral-500 border border-indigo-50 rounded"
+                                                id="new_pass" name="new_password" required>
+                                        </div>
+                                        <div class="mb-6">
+                                            <label class="mb-1" for="cpassword">Confirm Password</label>
+                                            <input type="password"
+                                                class="block w-full py-1 px-3 text-base text-neutral-500 border border-indigo-50 rounded"
+                                                id="cpass" name="cpassword" required>
+                                        </div>
+                                        <div class="mb-4">
+                                            <button class="text-white bg-blue-800 hover:bg-blue-900 py-1 px-3">Reset
+                                                Password</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Reset Password Modal Ends -->
+
+    <!-- User Profile Modal Starts -->
+    <div class="fixed hidden top-0 left-0 z-50 w-full h-full overflow-x-hidden overflow-y-auto bg-[rgba(0,0,0,0.5)]"
+        id="userModal">
+        <div onclick="blockToggle(userModal)" class="overly fixed top-0 bottom-0 left-0 right-0 z-10"></div>
+        <div class="relative lg:w-[800px] md:w-[500px] w-full my-7 mx-auto z-50">
+            <div class="max-h-full overflow-hidden rounded-xl relative bg-white border border-[rgba(0,0,0,.2)]">
+                <div class="flex shrink-0 items-center justify-between p-4 rounded-tl-md rounded-tr-md">
+                    <button onclick="blockToggle(userModal)" class="p-2 -mt-2 -mr-2 -mb-2 ml-auto"><i
+                            class="text-xl text-neutral-500 fas fa-times"></i></button>
+                </div>
+                <div class="overflow-y-auto relative flex-1 p-1">
+                    <div class="w-full">
+                        <div class="flex flex-wrap px-4 pb-3">
+                            <h5 class="basis-full mb-1 font-medium">User Profile</h5>
+                            <div class="md:basis-5/12 basis-full px-4 border-r border-neutral-200">
+                                <div class="flex flex-col justify-center items-center h-full">
+                                    <div class="text-center">
+                                        <img src="assets/img/Ellipse 55.png"
+                                            class="w-[130px] h-130px] object-fill object-top rounded-full">
+                                    </div>
+                                    <h5 class="text-center font-medium text-xl py-6">El Bronco VC CBE <span
+                                            class="inline-block w-3 h-3 rounded-full bg-neutral-500 ml-3 align-middle"></span>
+                                    </h5>
+                                    <div class="flex justify-between items-center">
+                                        <div class="text-center">
+                                            <span class="text-black text-sm font-medium block">142</span>
+                                            <span class="text-neutral-500 text-sm block">Completed<br> Offers</span>
+                                        </div>
+                                        <div class="text-center px-4">
+                                            <span class="text-black text-sm font-medium block">10,564</span>
+                                            <span class="text-neutral-500 text-sm block">Coins<br> Earned</span>
+                                        </div>
+                                        <div class="text-center">
+                                            <span class="text-black text-sm font-medium block">0</span>
+                                            <span class="text-neutral-500 text-sm block">Users<br> Referred</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="md:basis-7/12 basis-full">
+                                <div class="flex justify-between items-center border-b border-neutral-200 p-2">
+                                    <h5 class="font-medium text-xl">Earnings</h5>
+                                    <p class="text-neutral-500">Last 7 days</p>
+                                </div>
+                                <div class="p-2" id="earning-graph" style="height: 300px;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- User Profile Ends -->
+
+    <!-- Promo Modal Starts -->
+    <div class="fixed hidden top-0 left-0 z-50 w-full h-full overflow-x-hidden overflow-y-auto bg-[rgba(0,0,0,0.5)]"
+        id="promoModal">
+        <div onclick="blockToggle(promoModal)" class="overly fixed top-0 bottom-0 left-0 right-0 z-10"></div>
+        <div class="relative lg:w-[800px] md:w-[500px] w-full my-7 mx-auto z-50">
+            <div class="max-h-full overflow-hidden rounded-xl relative bg-white border border-[rgba(0,0,0,.2)]">
+                <div class="flex shrink-0 items-center justify-between p-4 rounded-tl-md rounded-tr-md">
+                    <button onclick="blockToggle(promoModal)" class="p-2 -mt-2 -mr-2 -mb-2 ml-auto"><i
+                            class="text-xl text-neutral-500 fas fa-times"></i></button>
+                </div>
+                <div class="overflow-y-auto relative flex-1 p-3">
+                    <div class="w-full">
+                        <div class="text-center">
+                            <h4 class="text-black text-2xl">Promotional Code</h4>
+                            <p class="my-3">Follow our socials to find out when codes are shared</p>
+                            <form>
+                                <div class="mb-4 w-10/12 mx-auto">
+                                    <input type="text"
+                                        class="block text-xl w-full py-1 px-3 text-base text-neutral-500 border border-indigo-50 rounded"
+                                        placeholder="Enter Promocode" required>
+                                </div>
+                                <div class="mb-4">
+                                    <button class="text-white bg-blue-800 hover:bg-blue-900 py-1 px-3">Redeem</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Promo Modal Ends -->
+
+
+    <!-- Jquery -->
+    <script src="assets/jquery/jquery-3.6.0.min.js"></script>
+    <!-- jQuery Validation -->
+    <script src="assets/jquery-validate/jquery.validate.min.js"></script>
+    <!--Slick JS-->
+    <script src="assets/slick/slick.js"></script>
+    <!-- Custom JS -->
+    <!-- Highcharts CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/10.0.0/highcharts.js"
+        integrity="sha512-//WD7Gq/302cFYMIeO2Y8ZCkrYDs/yOpZvSBjhc4QXeLuBChYmBDQg7ydKQLNAmJiuPZgccT85ZlL9s/ZghLBg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>
