@@ -2165,13 +2165,14 @@
                                    <div class="lg:basis-1/3 basis-full px-4 border-r border-neutral-200">
                                         <div class="flex flex-col justify-center items-center h-full">
                                              <h4 class="font-bold mb-4 text-2xl">Welcome to</h4>
-                                             <img src="assets/img/Monester-logo.png" class="mx-auto mb-4" width="180px">
+                                             <img src="assets/img/Monester-logo.png" class="mx-auto mb-8" width="180px">
                                         </div>
                                    </div>
                                    <div class="lg:basis-2/3 basis-full px-8">
                                         <div>
                                              <!-- Tab Button -->
-                                             <div class="flex items-center space-x-4 mb-4">
+                                             <div
+                                                  class="flex items-center justify-center lg:justify-start space-x-4 mb-6">
                                                   <button
                                                        class="text-blue-800 hover:text-white hover:bg-blue-900 py-2 px-6 transition-all duration-300"
                                                        @click="tab = 1"
@@ -2267,21 +2268,29 @@
                                                        <label for="terms" id="terms-error" style="display: none;"
                                                             class="error"></label>
                                                   </div>
-                                                  <div class="mb-8">
-                                                       <button
-                                                            class="text-white bg-blue-800 hover:bg-blue-900 py-2 px-6">Sign
-                                                            Up</button>
-                                                  </div>
+                                                  <div
+                                                       class="flex flex-col md:flex-row justify-start md:items-start space-y-4 md:space-y-0 md:space-x-4 ">
+                                                       <div>
+                                                            <button
+                                                                 class="text-white bg-blue-800 hover:bg-blue-900 py-2 px-6 inline-block">Sign
+                                                                 Up</button>
+                                                       </div>
 
-                                                  <div class="flex items-center justify-center space-x-3 mb-4">
-                                                       <div class="w-full h-px bg-slate-200"></div>
-                                                       <p class="text-sm text-slate-600">or</p>
-                                                       <div class="w-full h-px bg-slate-200"></div>
+                                                       <div
+                                                            class="flex md:flex-col items-center justify-center space-x-3 md:space-x-0 mb-4 lg:h-full">
+                                                            <div class="w-full md:w-0.5 md:h-3 h-px bg-slate-200">
+                                                            </div>
+                                                            <p class="text-sm text-slate-600 uppercase">or</p>
+                                                            <div class="w-full md:w-0.5 md:h-3 h-px bg-slate-200">
+                                                            </div>
+                                                       </div>
+                                                       <div class="flex justify-between items-center">
+                                                            <a href="#"
+                                                                 class="w-full bg-slate-100 shadow-md py-2.5 md:py-2 px-3 flex items-center justify-center rounded-md">
+                                                                 <img src="./assets/img/google.png" alt="" class="w-20">
+                                                            </a>
+                                                       </div>
                                                   </div>
-                                                  <a href="#"
-                                                       class="w-full bg-slate-100 shadow-md py-3 px-3 flex items-center justify-center rounded-md">
-                                                       <img src="./assets/img/google.png" alt="" class="w-24">
-                                                  </a>
                                              </form>
 
                                              <!-- Sign In -->
@@ -2320,30 +2329,32 @@
                                                             id="password" name="password" placeholder="Password"
                                                             required>
                                                   </div>
-                                                  <p class="text-xs text-slate-500 mb-4"> Forgot your password? <a
+                                                  <p class="text-xs text-slate-500 mb-6"> Forgot your password? <a
                                                             onclick="blockToggle(resetModal); blockToggle(logModal)"
                                                             class="text-blue-800 cursor-pointer">Click
                                                             here to reset your password</a></p>
-                                                  <div class="flex justify-start items-center mb-4">
-                                                       <button
-                                                            class="text-white bg-blue-800 hover:bg-blue-900 py-2 px-6">Sign
-                                                            In</button>
-                                                  </div>
-                                                  <div class="flex items-center justify-center space-x-3 mb-4">
-                                                       <div class="w-full h-px bg-slate-200"></div>
-                                                       <p class="text-sm text-slate-600">or</p>
-                                                       <div class="w-full h-px bg-slate-200"></div>
-                                                  </div>
-                                                  <div class="flex justify-between items-center">
-                                                       <a href="#"
-                                                            class="w-full bg-slate-100 shadow-md py-3 px-3 flex items-center justify-center rounded-md">
-                                                            <img src="./assets/img/google.png" alt="" class="w-24">
-                                                       </a>
-                                                       <!-- <a href="#"
-                                                       class=" w-full rounded-md bg-slate-50 text-black py-1 px-3 w-100">
-                                                       <img src="assets/img/steam.png"
-                                                            style="width: 50%; height: 25px; margin: 0 auto">
-                                                  </a> -->
+                                                  <div
+                                                       class="flex flex-col md:flex-row justify-start md:items-start space-y-4 md:space-y-0 md:space-x-4 ">
+                                                       <div>
+                                                            <button
+                                                                 class="text-white bg-blue-800 hover:bg-blue-900 py-2 px-6 inline-block">Sign
+                                                                 In</button>
+                                                       </div>
+
+                                                       <div
+                                                            class="flex md:flex-col items-center justify-center space-x-3 md:space-x-0 mb-4 lg:h-full">
+                                                            <div class="w-full md:w-0.5 md:h-3 h-px bg-slate-200">
+                                                            </div>
+                                                            <p class="text-sm text-slate-600 uppercase">or</p>
+                                                            <div class="w-full md:w-0.5 md:h-3 h-px bg-slate-200">
+                                                            </div>
+                                                       </div>
+                                                       <div class="flex justify-between items-center">
+                                                            <a href="#"
+                                                                 class="w-full bg-slate-100 shadow-md py-2.5 md:py-2 px-3 flex items-center justify-center rounded-md">
+                                                                 <img src="./assets/img/google.png" alt="" class="w-20">
+                                                            </a>
+                                                       </div>
                                                   </div>
                                              </form>
                                         </div>
