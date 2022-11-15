@@ -587,7 +587,7 @@
                                                   </div>
 
                                                   <!-- right Side -->
-                                                  <div class="">
+                                                  <div class="flex flex-col">
                                                        <h4 class="font-medium text-xl mb-4">Display Name</h4>
 
                                                        <form action="" class="mb-4">
@@ -647,16 +647,20 @@
                                                                  class="flex justify-center text-center w-full text-sm py-3 tracking-wide font-medium rounded-md bg-blue-800 text-white hover:bg-blue-900 transition-all">Activate</button>
                                                        </div>
 
-                                                       <div class="bg-red-400 rounded-md px-4 py-3">
-                                                            <h4 class="font-medium text-xl mb-3 text-white">Danger
+                                                       <div
+                                                            class="bg-red-400 rounded-md px-4 py-3 h-full flex flex-col">
+                                                            <h4 class="font-medium text-xl mb-3 text-white">
+                                                                 Danger
                                                                  Zone 
                                                             </h4>
                                                             <p class="text-base text-white max-w-sm mb-4">Once you
                                                                  delete your
                                                                  account, there is no going back. Please be certain.</p>
-                                                            <button type="submit"
-                                                                 class="flex justify-center text-center w-full text-sm py-3 tracking-wide font-medium rounded-md bg-rose-600 text-white hover:bg-rose-700 transition-all">Delete
-                                                                 Account</button>
+                                                            <div class="mt-auto h-full flex items-end">
+                                                                 <button type="submit"
+                                                                      class="flex justify-center text-center w-full text-sm py-3 tracking-wide font-medium rounded-md bg-rose-600 text-white hover:bg-rose-700 transition-all">Delete
+                                                                      Account</button>
+                                                            </div>
                                                        </div>
                                                   </div>
                                              </div>
@@ -1931,8 +1935,9 @@
      <div class="fixed hidden top-0 left-0 z-50 w-full h-full overflow-x-hidden overflow-y-auto bg-[rgba(0,0,0,0.5)]"
           id="logModal">
           <div onclick="blockToggle(logModal)" class="overly fixed top-0 bottom-0 left-0 right-0 z-10"></div>
-          <div class="relative lg:w-[800px] md:w-[500px] w-full my-7 mx-auto z-50">
-               <div class="max-h-full overflow-hidden rounded-xl relative bg-white border border-[rgba(0,0,0,.2)]">
+          <div class="relative lg:w-[800px] md:w-[500px] w-full md:my-7 mx-auto z-50">
+               <div
+                    class="max-h-full h-screen md:h-auto overflow-hidden md:rounded-xl relative bg-white border border-[rgba(0,0,0,.2)]">
                     <div class="flex shrink-0 items-center justify-between p-4 rounded-tl-md rounded-tr-md">
                          <button onclick="blockToggle(logModal)" class="p-2 -mt-2 -mr-2 -mb-2 ml-auto"><i
                                    class="text-xl text-neutral-500 fas fa-times"></i></button>
@@ -1943,7 +1948,7 @@
                                    <div class="lg:basis-1/3 basis-full px-4 border-r border-neutral-200">
                                         <div class="flex flex-col justify-center items-center h-full">
                                              <h4 class="font-bold mb-4 text-2xl">Welcome to</h4>
-                                             <img src="assets/img/Monester-logo.png" class="mx-auto" width="180px">
+                                             <img src="assets/img/Monester-logo.png" class="mx-auto mb-6" width="180px">
                                         </div>
                                    </div>
                                    <div class="lg:basis-2/3 basis-full px-8">
@@ -1954,7 +1959,8 @@
                                                        <h3 class="font-bold text-3xl mb-6 text-center lg:text-left">Sign
                                                             in</h3>
                                                        <div class="mb-4">
-                                                            <label class="mb-1 text-sm" for="email">Email
+                                                            <label class="mb-1 text-sm text-neutral-500"
+                                                                 for="email">Email
                                                                  Address</label>
                                                             <input type="email"
                                                                  class="block w-full py-2 px-3 text-sm text-neutral-500 border border-indigo-50 rounded placeholder:text-slate-300"
@@ -1962,7 +1968,8 @@
                                                                  required>
                                                        </div>
                                                        <div class="mb-6">
-                                                            <label class="mb-1 text-sm" for="password">Password</label>
+                                                            <label class="mb-1 text-sm text-neutral-500"
+                                                                 for="password">Password</label>
                                                             <input type="password"
                                                                  class="block w-full py-2 px-3 text-sm text-neutral-500 border border-indigo-50 rounded placeholder:text-slate-300"
                                                                  id="password" name="password" placeholder="Password"
@@ -2008,8 +2015,9 @@
      <div class="fixed hidden top-0 left-0 z-50 w-full h-full overflow-x-hidden overflow-y-auto bg-[rgba(0,0,0,0.5)]"
           id="registerModal">
           <div onclick="blockToggle(registerModal)" class="overly fixed top-0 bottom-0 left-0 right-0 z-10"></div>
-          <div class="relative lg:w-[800px] md:w-[500px] w-full my-7 mx-auto z-50">
-               <div class="max-h-full overflow-hidden rounded-xl relative bg-white border border-[rgba(0,0,0,.2)]">
+          <div class="relative lg:w-[800px] md:w-[500px] w-full md:my-7 mx-auto z-50">
+               <div
+                    class="max-h-full h-screen md:h-auto overflow-hidden md:rounded-xl relative bg-white border border-[rgba(0,0,0,.2)]">
                     <div class="flex shrink-0 items-center justify-between p-4 rounded-tl-md rounded-tr-md">
                          <button onclick="blockToggle(registerModal)" class="p-2 -mt-2 -mr-2 -mb-2 ml-auto"><i
                                    class="text-xl text-neutral-500 fas fa-times"></i></button>
@@ -2030,36 +2038,74 @@
                                                   <h3 class="font-bold text-3xl mb-6 text-center lg:text-left">Create
                                                        your Account</h3>
                                                   <div class="mb-4">
-                                                       <label class="mb-1 text-sm" for="email">Email Address</label>
+                                                       <div class="flex items-center space-x-2">
+                                                            <label
+                                                                 class="mb-1 text-sm text-neutral-500 whitespace-nowrap"
+                                                                 for="email">Email
+                                                                 Address</label>
+                                                            <div class="w-full h-px">
+                                                                 <div
+                                                                      class="w-full h-full bg-gradient-to-l to-slate-200 from-slate-50">
+                                                                 </div>
+                                                            </div>
+                                                       </div>
                                                        <input type="email"
                                                             class="block w-full py-2 px-3 text-sm text-neutral-500 border border-indigo-50 rounded placeholder:text-slate-300"
                                                             id="email" name="email" placeholder="Email Address"
                                                             required>
                                                   </div>
                                                   <div class="mb-4">
-                                                       <label class="mb-1 text-sm" for="name">Username</label>
+                                                       <div class="flex items-center space-x-2">
+                                                            <label
+                                                                 class="mb-1 text-sm text-neutral-500 whitespace-nowrap"
+                                                                 for="name">Username</label>
+                                                            <div class="w-full h-px">
+                                                                 <div
+                                                                      class="w-full h-full bg-gradient-to-l to-slate-200 from-slate-50">
+                                                                 </div>
+                                                            </div>
+                                                       </div>
                                                        <input type="text"
                                                             class="block w-full py-2 px-3 text-sm text-neutral-500 border border-indigo-50 rounded placeholder:text-slate-300"
                                                             id="name" name="name" placeholder="Username" required>
                                                   </div>
                                                   <div class="mb-6">
-                                                       <label class="mb-1 text-sm" for="new_password">Password</label>
+                                                       <div class="flex items-center space-x-2">
+                                                            <label
+                                                                 class="mb-1 text-sm text-neutral-500 whitespace-nowrap"
+                                                                 for="new_password">Password</label>
+                                                            <div class="w-full h-px">
+                                                                 <div
+                                                                      class="w-full h-full bg-gradient-to-l to-slate-200 from-slate-50">
+                                                                 </div>
+                                                            </div>
+                                                       </div>
                                                        <input type="password"
                                                             class="block w-full py-2 px-3 text-sm text-neutral-500 border border-indigo-50 rounded placeholder:text-slate-300"
                                                             id="new_password" name="new_password" placeholder="Password"
                                                             required>
                                                   </div>
                                                   <div class="mb-6">
-                                                       <label class="mb-1 text-sm" for="cpassword">Confirm
-                                                            Password</label>
+                                                       <div class="flex items-center space-x-2">
+                                                            <label
+                                                                 class="mb-1 text-sm text-neutral-500 whitespace-nowrap"
+                                                                 for="cpassword">Confirm
+                                                                 Password</label>
+                                                            <div class="w-full h-px">
+                                                                 <div
+                                                                      class="w-full h-full bg-gradient-to-l to-slate-200 from-slate-50">
+                                                                 </div>
+                                                            </div>
+                                                       </div>
                                                        <input type="password"
                                                             class="block w-full py-2 px-3 text-sm text-neutral-500 border border-indigo-50 rounded placeholder:text-slate-300"
                                                             id="cpassword" name="cpassword"
                                                             placeholder="Confirm Password" required>
                                                   </div>
-                                                  <div class="mb-6">
-                                                       <input class="form-check-input w-3.5 h-3.5" type="checkbox"
-                                                            required value="" id="terms" name="terms">
+                                                  <div class="mb-6 flex space-x-2 items-start">
+                                                       <input
+                                                            class="form-check-input border border-gray-400 w-3.5 h-3.5 mt-1"
+                                                            type="checkbox" required value="" id="terms" name="terms">
                                                        <label class="form-check-label text-sm" for="terms">
                                                             <small class="text-sm">By signing up, you are agreeing
                                                                  t our
