@@ -1491,12 +1491,14 @@
                                              <h5 class="text-xl mb-3 font-medium">Account</h5>
                                              <ul>
                                                   <li class="mb-2">
-                                                       <a onclick="blockToggle(logModal)"
+                                                       <a x-data
+                                                            @click.prevent="$dispatch('login-register-modal'); $dispatch('tab', { tab: 1 })"
                                                             class="text-neutral-500 hover:text-black"
                                                             href="#login-modal">Login</a>
                                                   </li>
                                                   <li class="mb-2">
-                                                       <a onclick="blockToggle(registerModal)"
+                                                       <a x-data
+                                                            @click.prevent="$dispatch('login-register-modal'); $dispatch('tab', { tab: 2 })"
                                                             class="text-neutral-500 hover:text-black"
                                                             href="#register-modal">Register</a>
                                                   </li>
@@ -2148,7 +2150,7 @@
 
      <!-- Login And Register Modal Start -->
      <div class="fixed inset-0 z-50 w-full h-full overflow-x-hidden overflow-y-auto bg-black/50"
-          x-data="{openModal: true, tab: 1}" x-show="openModal" @login-register-modal.window="openModal = true"
+          x-data="{openModal: false, tab: 1}" x-show="openModal" @login-register-modal.window="openModal = true"
           @tab.window="tab = $event.detail.tab">
           <div class="relative lg:max-w-[800px] md:max-w-[500px] w-full md:my-7 mx-auto z-50">
                <div @click.outside="openModal = false"
@@ -2268,8 +2270,7 @@
                                                        <label for="terms" id="terms-error" style="display: none;"
                                                             class="error"></label>
                                                   </div>
-                                                  <div
-                                                       class="flex flex-col md:flex-row justify-start md:items-start space-y-4 md:space-y-0 md:space-x-4 ">
+                                                  <div class="flex flex-row justify-start items-start space-x-4 ">
                                                        <div>
                                                             <button
                                                                  class="text-white bg-blue-800 hover:bg-blue-900 py-2 px-6 inline-block">Sign
@@ -2277,11 +2278,11 @@
                                                        </div>
 
                                                        <div
-                                                            class="flex md:flex-col items-center justify-center space-x-3 md:space-x-0 mb-4 lg:h-full">
-                                                            <div class="w-full md:w-0.5 md:h-3 h-px bg-slate-200">
+                                                            class="flex flex-col items-center justify-center mb-4 h-full">
+                                                            <div class="w-0.5 h-3 bg-slate-200">
                                                             </div>
                                                             <p class="text-sm text-slate-600 uppercase">or</p>
-                                                            <div class="w-full md:w-0.5 md:h-3 h-px bg-slate-200">
+                                                            <div class="w-0.5 h-3 bg-slate-200">
                                                             </div>
                                                        </div>
                                                        <div class="flex justify-between items-center">
@@ -2333,8 +2334,7 @@
                                                             onclick="blockToggle(resetModal); blockToggle(logModal)"
                                                             class="text-blue-800 cursor-pointer">Click
                                                             here to reset your password</a></p>
-                                                  <div
-                                                       class="flex flex-col md:flex-row justify-start md:items-start space-y-4 md:space-y-0 md:space-x-4 ">
+                                                  <div class="flex flex-row justify-start items-start space-x-4 ">
                                                        <div>
                                                             <button
                                                                  class="text-white bg-blue-800 hover:bg-blue-900 py-2 px-6 inline-block">Sign
@@ -2342,11 +2342,11 @@
                                                        </div>
 
                                                        <div
-                                                            class="flex md:flex-col items-center justify-center space-x-3 md:space-x-0 mb-4 lg:h-full">
-                                                            <div class="w-full md:w-0.5 md:h-3 h-px bg-slate-200">
+                                                            class="flex flex-col items-center justify-center mb-4 h-full">
+                                                            <div class="w-0.5 h-3 bg-slate-200">
                                                             </div>
                                                             <p class="text-sm text-slate-600 uppercase">or</p>
-                                                            <div class="w-full md:w-0.5 md:h-3 h-px bg-slate-200">
+                                                            <div class="w-0.5 h-3 bg-slate-200">
                                                             </div>
                                                        </div>
                                                        <div class="flex justify-between items-center">
@@ -2356,14 +2356,15 @@
                                                             </a>
                                                        </div>
                                                   </div>
-                                             </form>
                                         </div>
+                                        </form>
                                    </div>
                               </div>
                          </div>
                     </div>
                </div>
           </div>
+     </div>
      </div>
      <!-- Login And Register Modal End -->
 
