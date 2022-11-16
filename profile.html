@@ -2149,12 +2149,12 @@
 
 
      <!-- Login And Register Modal Start -->
-     <div class="fixed inset-0 z-50 w-full h-full overflow-x-hidden overflow-y-auto bg-black/50"
+     <div class="fixed inset-0 z-50 w-full h-screen overflow-x-hidden overflow-y-auto bg-black/50"
           x-data="{openModal: false, tab: 1}" x-show="openModal" @login-register-modal.window="openModal = true"
           @tab.window="tab = $event.detail.tab">
           <div class="relative lg:max-w-[800px] md:max-w-[500px] w-full md:my-7 mx-auto z-50">
                <div @click.outside="openModal = false"
-                    class="max-h-full h-screen md:h-auto overflow-hidden md:rounded-xl relative bg-white border border-black/20">
+                    class="max-h-screen h-screen md:h-auto overflow-hidden md:rounded-xl relative bg-white border border-black/20">
                     <div class="flex shrink-0 items-center justify-between p-4 rounded-tl-md rounded-tr-md">
                          <button @click="openModal = false" class="p-2 -mt-2 -mr-2 -mb-2 ml-auto"><i
                                    class="text-xl text-neutral-500 fas fa-times"></i></button>
@@ -2165,7 +2165,7 @@
                          <div class="w-full">
                               <div class="flex flex-wrap py-4">
                                    <div class="lg:basis-1/3 basis-full px-4 border-r border-neutral-200">
-                                        <div class="flex flex-col justify-center items-center h-full">
+                                        <div class="hidden md:flex flex-col justify-center items-center h-full">
                                              <h4 class="font-bold mb-4 text-2xl">Welcome to</h4>
                                              <img src="assets/img/Monester-logo.png" class="mx-auto mb-8" width="180px">
                                         </div>
