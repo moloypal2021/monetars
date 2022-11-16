@@ -2151,7 +2151,27 @@
      <!-- Login And Register Modal Start -->
      <div class="fixed inset-0 z-50 w-full h-screen overflow-x-hidden overflow-y-auto bg-black/50"
           x-data="{openModal: false, tab: 1}" x-show="openModal" @login-register-modal.window="openModal = true"
-          @tab.window="tab = $event.detail.tab">
+          @tab.window="tab = $event.detail.tab" x-init="$watch('openModal', value =>{
+               if(openModal){
+                    document.querySelector('body').classList.add('fixed', 'inset-0');
+                    document.querySelector('html').style.cssText = `
+                         position: fixed; 
+                         top: 0;
+                         bottom: 0;
+                         left: 0;
+                         right: 0;
+                         `;
+               }else{
+                    document.querySelector('body').classList.remove('fixed', 'inset-0');
+                    document.querySelector('html').style.cssText = `
+                         position: static; 
+                         top: auto;
+                         bottom: auto;
+                         left: auto;
+                         right: auto;
+                         `;
+               }
+          })" style="display: none;">
           <div class="relative lg:max-w-[800px] md:max-w-[500px] w-full md:my-7 mx-auto z-50">
                <div @click.outside="openModal = false"
                     class="max-h-screen h-screen md:h-auto overflow-hidden md:rounded-xl relative bg-white border border-black/20">
@@ -2189,7 +2209,7 @@
 
                                              <!-- Sign Up -->
                                              <form method="post" name="register-form" autocomplete="off"
-                                                  x-show="tab === 2">
+                                                  x-show="tab === 2" style="display: none;">
                                                   <div class="mb-4">
                                                        <div class="flex items-center space-x-2">
                                                             <label
@@ -2295,8 +2315,8 @@
                                              </form>
 
                                              <!-- Sign In -->
-                                             <form method="post" name="login-form" autocomplete="off"
-                                                  x-show="tab === 1">
+                                             <form method="post" name="login-form" autocomplete="off" x-show="tab === 1"
+                                                  style="display: none;">
                                                   <div class="mb-3">
                                                        <div class="flex items-center space-x-2">
                                                             <label
