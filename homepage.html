@@ -127,7 +127,7 @@
                     </div>
                 </div>
                 <div class="space-x-2 items-center flex ml-2">
-                    <button onclick="blockToggle(logModal)"
+                    <button x-data @click.prevent="$dispatch('login-register-modal'); $dispatch('tab', { tab: 1 })"
                         class="inline-flex space-x-2 py-3 px-6 text-sm text-neutral-800 bg-indigo-200">
                         <svg class="w-3.5" viewBox="0 0 14 14" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -136,7 +136,7 @@
                         </svg>
                         <span>Login</span>
                     </button>
-                    <button onclick="blockToggle(registerModal)"
+                    <button x-data @click.prevent="$dispatch('login-register-modal'); $dispatch('tab', { tab: 2 })"
                         class="inline-flex items-center space-x-2 py-3 px-6 text-sm text-white bg-blue-800 hover:bg-blue-900">
                         <svg class="w-3.5" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -866,12 +866,14 @@
                                         <h5 class="text-xl mb-3 font-medium">Account</h5>
                                         <ul>
                                             <li class="mb-2">
-                                                <a onclick="blockToggle(logModal)"
+                                                <a x-data
+                                                    @click.prevent="$dispatch('login-register-modal'); $dispatch('tab', { tab: 1 })"
                                                     class="text-neutral-500 hover:text-black"
                                                     href="#login-modal">Login</a>
                                             </li>
                                             <li class="mb-2">
-                                                <a onclick="blockToggle(registerModal)"
+                                                <a x-data
+                                                    @click.prevent="$dispatch('login-register-modal'); $dispatch('tab', { tab: 1 })"
                                                     class="text-neutral-500 hover:text-black"
                                                     href="#register-modal">Register</a>
                                             </li>
@@ -1306,11 +1308,13 @@
     <!-- Login Modal Starts -->
     <div class="fixed hidden top-0 left-0 z-50 w-full h-full overflow-x-hidden overflow-y-auto bg-[rgba(0,0,0,0.5)]"
         id="logModal">
-        <div onclick="blockToggle(logModal)" class="overly fixed top-0 bottom-0 left-0 right-0 z-10"></div>
+        <div x-data @click.prevent="$dispatch('login-register-modal'); $dispatch('tab', { tab: 1 })"
+            class="overly fixed top-0 bottom-0 left-0 right-0 z-10"></div>
         <div class="relative lg:w-[800px] md:w-[500px] w-full my-7 mx-auto z-50">
             <div class="max-h-full overflow-hidden rounded-xl relative bg-white border border-[rgba(0,0,0,.2)]">
                 <div class="flex shrink-0 items-center justify-between p-4 rounded-tl-md rounded-tr-md">
-                    <button onclick="blockToggle(logModal)" class="p-2 -mt-2 -mr-2 -mb-2 ml-auto"><i
+                    <button x-data @click.prevent="$dispatch('login-register-modal'); $dispatch('tab', { tab: 1 })"
+                        class="p-2 -mt-2 -mr-2 -mb-2 ml-auto"><i
                             class="text-xl text-neutral-500 fas fa-times"></i></button>
                 </div>
                 <div class="overflow-y-auto relative flex-1 p-1">
@@ -1376,11 +1380,13 @@
     <!-- Register Modal Starts -->
     <div class="fixed hidden top-0 left-0 z-50 w-full h-full overflow-x-hidden overflow-y-auto bg-[rgba(0,0,0,0.5)]"
         id="registerModal">
-        <div onclick="blockToggle(registerModal)" class="overly fixed top-0 bottom-0 left-0 right-0 z-10"></div>
+        <div x-data @click.prevent="$dispatch('login-register-modal'); $dispatch('tab', { tab: 1 })"
+            class="overly fixed top-0 bottom-0 left-0 right-0 z-10"></div>
         <div class="relative lg:w-[800px] md:w-[500px] w-full my-7 mx-auto z-50">
             <div class="max-h-full overflow-hidden rounded-xl relative bg-white border border-[rgba(0,0,0,.2)]">
                 <div class="flex shrink-0 items-center justify-between p-4 rounded-tl-md rounded-tr-md">
-                    <button onclick="blockToggle(registerModal)" class="p-2 -mt-2 -mr-2 -mb-2 ml-auto"><i
+                    <button x-data @click.prevent="$dispatch('login-register-modal'); $dispatch('tab', { tab: 1 })"
+                        class="p-2 -mt-2 -mr-2 -mb-2 ml-auto"><i
                             class="text-xl text-neutral-500 fas fa-times"></i></button>
                 </div>
                 <div class="overflow-y-auto relative flex-1 p-1">
@@ -1446,6 +1452,234 @@
         </div>
     </div>
     <!-- Register Modal Ends -->
+
+
+    <!-- Login And Register Modal Start -->
+    <div class="fixed inset-0 z-50 w-full h-screen overflow-x-hidden overflow-y-auto bg-black/50"
+        x-data="{openModal: false, tab: 1}" x-show="openModal" @login-register-modal.window="openModal = true"
+        @tab.window="tab = $event.detail.tab" x-init="$watch('openModal', value =>{
+         if(openModal){
+              document.querySelector('body').classList.add('fixed', 'inset-0');
+              document.querySelector('html').style.cssText = `
+                   position: fixed; 
+                   top: 0;
+                   bottom: 0;
+                   left: 0;
+                   right: 0;
+                   overflow: hidden;
+                   `;
+         }else{
+              document.querySelector('body').classList.remove('fixed', 'inset-0');
+              document.querySelector('html').style.cssText = `
+                   position: static; 
+                   top: auto;
+                   bottom: auto;
+                   left: auto;
+                   right: auto;
+                   overflow: vissible;
+                   `;
+         }
+    })" style="display: none;">
+        <div class="relative lg:max-w-[800px] md:max-w-[500px] w-full md:my-7 mx-auto z-50">
+            <div @click.outside="openModal = false"
+                class="max-h-screen h-screen md:h-auto overflow-hidden md:rounded-xl relative bg-white border border-black/20">
+                <div class="flex shrink-0 items-center justify-between p-4 rounded-tl-md rounded-tr-md">
+                    <button @click="openModal = false" class="p-2 -mt-2 -mr-2 -mb-2 ml-auto"><i
+                            class="text-xl text-neutral-500 fas fa-times"></i></button>
+                </div>
+
+
+                <div class="overflow-y-auto relative flex-1 p-1">
+                    <div class="w-full">
+                        <div class="flex flex-wrap py-4">
+                            <div class="lg:basis-1/3 basis-full px-4 border-r border-neutral-200">
+                                <div class="hidden md:flex flex-col justify-center items-center h-full">
+                                    <h4 class="font-bold mb-4 text-2xl">Welcome to</h4>
+                                    <img src="assets/img/Monester-logo.png" class="mx-auto mb-8" width="180px">
+                                </div>
+                            </div>
+                            <div class="lg:basis-2/3 basis-full px-8">
+                                <div>
+                                    <!-- Tab Button -->
+                                    <div class="flex items-center justify-center lg:justify-start space-x-4 mb-6">
+                                        <button
+                                            class="text-blue-800 hover:text-white hover:bg-blue-900 py-2 px-6 transition-all duration-300"
+                                            @click="tab = 1"
+                                            :class="tab === 1 ? 'bg-blue-800 text-white' : 'bg-transparent'">Sign
+                                            In</button>
+                                        <button
+                                            class="text-blue-800 hover:text-white hover:bg-blue-900 py-2 px-6 transition-all duration-300"
+                                            @click="tab = 2"
+                                            :class="tab === 2 ? 'bg-blue-800 text-white' : 'bg-transparent'">Sign
+                                            Up</button>
+                                    </div>
+
+                                    <!-- Sign Up -->
+                                    <form method="post" name="register-form" autocomplete="off" x-show="tab === 2"
+                                        style="display: none;">
+                                        <div class="mb-4">
+                                            <div class="flex items-center space-x-2">
+                                                <label class="mb-1 text-sm text-neutral-500 whitespace-nowrap"
+                                                    for="email">Email
+                                                    Address</label>
+                                                <div class="w-full h-px">
+                                                    <div
+                                                        class="w-full h-full bg-gradient-to-l to-slate-200 from-slate-50">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <input type="email"
+                                                class="block w-full py-2 px-3 text-sm text-neutral-500 border border-indigo-50 rounded placeholder:text-slate-300"
+                                                id="email" name="email" placeholder="Email Address" required>
+                                        </div>
+                                        <div class="mb-4">
+                                            <div class="flex items-center space-x-2">
+                                                <label class="mb-1 text-sm text-neutral-500 whitespace-nowrap"
+                                                    for="name">Username</label>
+                                                <div class="w-full h-px">
+                                                    <div
+                                                        class="w-full h-full bg-gradient-to-l to-slate-200 from-slate-50">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <input type="text"
+                                                class="block w-full py-2 px-3 text-sm text-neutral-500 border border-indigo-50 rounded placeholder:text-slate-300"
+                                                id="name" name="name" placeholder="Username" required>
+                                        </div>
+                                        <div class="mb-6">
+                                            <div class="flex items-center space-x-2">
+                                                <label class="mb-1 text-sm text-neutral-500 whitespace-nowrap"
+                                                    for="new_password">Password</label>
+                                                <div class="w-full h-px">
+                                                    <div
+                                                        class="w-full h-full bg-gradient-to-l to-slate-200 from-slate-50">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <input type="password"
+                                                class="block w-full py-2 px-3 text-sm text-neutral-500 border border-indigo-50 rounded placeholder:text-slate-300"
+                                                id="new_password" name="new_password" placeholder="Password" required>
+                                        </div>
+                                        <div class="mb-6">
+                                            <div class="flex items-center space-x-2">
+                                                <label class="mb-1 text-sm text-neutral-500 whitespace-nowrap"
+                                                    for="cpassword">Confirm
+                                                    Password</label>
+                                                <div class="w-full h-px">
+                                                    <div
+                                                        class="w-full h-full bg-gradient-to-l to-slate-200 from-slate-50">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <input type="password"
+                                                class="block w-full py-2 px-3 text-sm text-neutral-500 border border-indigo-50 rounded placeholder:text-slate-300"
+                                                id="cpassword" name="cpassword" placeholder="Confirm Password" required>
+                                        </div>
+                                        <div class="mb-6 flex space-x-2 items-start">
+                                            <input class="form-check-input border border-gray-400 w-3.5 h-3.5 mt-1"
+                                                type="checkbox" required value="" id="terms" name="terms">
+                                            <label class="form-check-label text-sm" for="terms">
+                                                <small class="text-sm">By signing up, you are agreeing
+                                                    t our
+                                                    <a class="text-blue-500 underline" href="#">Privacy
+                                                        Policy</a> and <a class="text-blue-500 underline" href="#">Term
+                                                        of Service.</a></small>
+                                            </label>
+                                            <label for="terms" id="terms-error" style="display: none;"
+                                                class="error"></label>
+                                        </div>
+                                        <div class="flex flex-row justify-start items-start space-x-4 ">
+                                            <div>
+                                                <button
+                                                    class="text-white bg-blue-800 hover:bg-blue-900 py-2 px-6 inline-block">Sign
+                                                    Up</button>
+                                            </div>
+
+                                            <div class="flex flex-col items-center justify-center mb-4 h-full">
+                                                <div class="w-0.5 h-3 bg-slate-200">
+                                                </div>
+                                                <p class="text-sm text-slate-600 uppercase">or</p>
+                                                <div class="w-0.5 h-3 bg-slate-200">
+                                                </div>
+                                            </div>
+                                            <div class="flex justify-between items-center">
+                                                <a href="#"
+                                                    class="w-full bg-slate-100 shadow-md py-2.5 md:py-2 px-3 flex items-center justify-center rounded-md">
+                                                    <img src="./assets/img/google.png" alt="" class="w-20">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </form>
+
+                                    <!-- Sign In -->
+                                    <form method="post" name="login-form" autocomplete="off" x-show="tab === 1"
+                                        style="display: none;">
+                                        <div class="mb-3">
+                                            <div class="flex items-center space-x-2">
+                                                <label class="mb-1 text-sm text-neutral-500 whitespace-nowrap"
+                                                    for="email">Email
+                                                    Address</label>
+                                                <div class="w-full h-px">
+                                                    <div
+                                                        class="w-full h-full bg-gradient-to-l to-slate-200 from-slate-50">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <input type="email"
+                                                class="block w-full py-2 px-3 text-sm text-neutral-500 border border-indigo-50 rounded placeholder:text-slate-300"
+                                                id="email" name="email" placeholder="Email Address" required>
+                                        </div>
+                                        <div class="mb-4">
+                                            <div class="flex items-center space-x-2">
+                                                <label class="mb-1 text-sm text-neutral-500 whitespace-nowrap"
+                                                    for="password">Password</label>
+                                                <div class="w-full h-px">
+                                                    <div
+                                                        class="w-full h-full bg-gradient-to-l to-slate-200 from-slate-50">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <input type="password"
+                                                class="block w-full py-2 px-3 text-sm text-neutral-500 border border-indigo-50 rounded placeholder:text-slate-300"
+                                                id="password" name="password" placeholder="Password" required>
+                                        </div>
+                                        <p class="text-xs text-slate-500 mb-6"> Forgot your password? <a
+                                                onclick="blockToggle(resetModal); blockToggle(logModal)"
+                                                class="text-blue-800 cursor-pointer">Click
+                                                here to reset your password</a></p>
+                                        <div class="flex flex-row justify-start items-start space-x-4 ">
+                                            <div>
+                                                <button
+                                                    class="text-white bg-blue-800 hover:bg-blue-900 py-2 px-6 inline-block">Sign
+                                                    In</button>
+                                            </div>
+
+                                            <div class="flex flex-col items-center justify-center mb-4 h-full">
+                                                <div class="w-0.5 h-3 bg-slate-200">
+                                                </div>
+                                                <p class="text-sm text-slate-600 uppercase">or</p>
+                                                <div class="w-0.5 h-3 bg-slate-200">
+                                                </div>
+                                            </div>
+                                            <div class="flex justify-between items-center">
+                                                <a href="#"
+                                                    class="w-full bg-slate-100 shadow-md py-2.5 md:py-2 px-3 flex items-center justify-center rounded-md">
+                                                    <img src="./assets/img/google.png" alt="" class="w-20">
+                                                </a>
+                                            </div>
+                                        </div>
+                                </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- Login And Register Modal End -->
+
 
     <!-- Forgot Password Modal Starts -->
     <div class="fixed hidden top-0 left-0 z-50 w-full h-full overflow-x-hidden overflow-y-auto bg-[rgba(0,0,0,0.5)]"
